@@ -607,6 +607,45 @@ section {
     color: var(--text-muted);
 }
 
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--secondary-bg);
+    color: var(--text-secondary);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.social-links a:hover {
+    background: var(--accent-gold);
+    color: var(--primary-bg);
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.social-links a svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover svg {
+    transform: scale(1.1);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
