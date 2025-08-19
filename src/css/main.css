@@ -566,15 +566,7 @@ section {
     color: var(--primary-bg);
 }
 
-.service-toggle.expanded::after {
-    content: '▲';
-    margin-left: 0.5rem;
-}
-
-.service-toggle:not(.expanded)::after {
-    content: '▼';
-    margin-left: 0.5rem;
-}
+/* Arrow indicators are handled by SVG in HTML/JavaScript */
 
 /* About Section */
 .about-content {

@@ -556,11 +556,21 @@ function toggleService(button) {
         // Collapse
         details.classList.remove('expanded');
         button.classList.remove('expanded');
-        button.innerHTML = 'Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;"><polyline points="6,9 12,15 18,9"></polyline></svg>';
+        button.innerHTML = `
+                        Learn More 
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    `;
     } else {
         // Expand
         details.classList.add('expanded');
         button.classList.add('expanded');
-        button.innerHTML = 'Show Less <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;"><polyline points="18,15 12,9 6,15"></polyline></svg>';
+        button.innerHTML = `
+                        Show Less 
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;">
+                            <polyline points="18,15 12,9 6,15"></polyline>
+                        </svg>
+                    `;
     }
 }
