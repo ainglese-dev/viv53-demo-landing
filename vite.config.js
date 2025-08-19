@@ -7,7 +7,10 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: 'src/index.html'
+        main: 'src/index.html',
+        privacy: 'src/privacy.html',
+        cookies: 'src/cookies.html',
+        'data-protection': 'src/data-protection.html'
       }
     }
   },
