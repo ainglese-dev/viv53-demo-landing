@@ -5,6 +5,25 @@
     box-sizing: border-box;
 }
 
+/* Accessibility - Skip to content link */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--accent-gold);
+    color: var(--primary-bg);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 2000;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: top 0.3s;
+}
+
+.skip-to-content:focus {
+    top: 6px;
+}
+
 :root {
     --primary-bg: #0a0a0a;
     --secondary-bg: #1a1a1a;

@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://ainglese-dev.github.io/viv53-demo-landing/sitemap.xml
+
+# Allow crawling of important pages
+Allow: /index.html
+Allow: /css/
+Allow: /images/
+
+# Disallow any admin or private areas (none currently)
+# Disallow: /admin/
+
+# Crawl-delay (optional - helps prevent server overload)
+Crawl-delay: 1
