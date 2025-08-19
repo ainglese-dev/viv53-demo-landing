@@ -324,3 +324,54 @@ console.log('%cBuilt with modern web technologies for optimal performance', 'col
 
 // Initialize hero GIF loading
 document.addEventListener('DOMContentLoaded', initHeroGif);
+
+// Go to Top Button Functionality
+function initGoToTopButton() {
+    const goToTopBtn = document.getElementById('go-to-top');
+    const scrollThreshold = 300; // Show button after scrolling 300px
+    
+    if (!goToTopBtn) return;
+    
+    // Show/hide button based on scroll position
+    function toggleGoToTopButton() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > scrollThreshold) {
+            goToTopBtn.classList.add('visible');
+            goToTopBtn.style.display = 'block';
+        } else {
+            goToTopBtn.classList.remove('visible');
+            // Keep display: block to maintain transition, hide via opacity/visibility in CSS
+        }
+    }
+    
+    // Smooth scroll to top function
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    
+    // Event listeners
+    window.addEventListener('scroll', toggleGoToTopButton);
+    
+    // Click handler for the button
+    const goToTopButton = goToTopBtn.querySelector('.go-to-top-btn');
+    if (goToTopButton) {
+        goToTopButton.addEventListener('click', scrollToTop);
+    }
+    
+    // Also handle clicks on the container
+    goToTopBtn.addEventListener('click', (e) => {
+        if (e.target === goToTopBtn || e.target.closest('.go-to-top-btn')) {
+            scrollToTop();
+        }
+    });
+    
+    // Initial check
+    toggleGoToTopButton();
+}
+
+// Initialize Go to Top button
+document.addEventListener('DOMContentLoaded', initGoToTopButton);

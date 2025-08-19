@@ -5,24 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Accessibility - Skip to content link */
-.skip-to-content {
-    position: absolute;
-    top: -40px;
-    left: 6px;
-    background: var(--accent-gold);
-    color: var(--primary-bg);
-    padding: 8px;
-    text-decoration: none;
-    z-index: 2000;
-    font-weight: 600;
-    border-radius: 4px;
-    transition: top 0.3s;
-}
-
-.skip-to-content:focus {
-    top: 6px;
-}
 
 :root {
     --primary-bg: #0a0a0a;
@@ -598,6 +580,59 @@ section {
     }
 }
 
+/* Go to Top Button */
+.go-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    transform: translateY(30px);
+}
+
+.go-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.go-to-top-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: var(--accent-gold);
+    color: var(--primary-bg);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.go-to-top-btn:hover {
+    background: var(--accent-gold-hover);
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+}
+
+.go-to-top-btn:active {
+    transform: scale(0.95);
+}
+
+.go-to-top-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.go-to-top-btn:hover svg {
+    transform: translateY(-2px);
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .floating-whatsapp {
@@ -613,6 +648,21 @@ section {
     .whatsapp-float-btn svg {
         width: 24px;
         height: 24px;
+    }
+
+    .go-to-top {
+        bottom: 15px;
+        left: 15px;
+    }
+    
+    .go-to-top-btn {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .go-to-top-btn svg {
+        width: 18px;
+        height: 18px;
     }
 
     .map-embed iframe {
