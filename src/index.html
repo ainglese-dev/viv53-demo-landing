@@ -173,7 +173,7 @@
                     <span class="logo-fallback">VIV53</span>
                 </a>
             </div>
-            <ul class="nav-menu" id="nav-menu">
+            <ul class="nav-menu" id="nav-menu" aria-hidden="true">
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Home</a>
                 </li>
@@ -187,7 +187,7 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div class="hamburger" id="hamburger">
+            <div class="hamburger" id="hamburger" role="button" aria-label="Toggle navigation menu" aria-expanded="false" tabindex="0">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -195,6 +195,22 @@
         </div>
         </nav>
     </header>
+
+    <!-- Demo Banner -->
+    <div class="demo-banner" id="demo-banner">
+        <div class="demo-banner-content">
+            <div class="demo-info">
+                <span class="demo-badge">DEMO</span>
+                <span class="demo-text">This is a demonstration website showcasing VIV53 IT Services</span>
+            </div>
+            <button class="demo-close" id="demo-close" aria-label="Close demo banner">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main id="main-content">
@@ -223,12 +239,12 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll">
                 <h2>Our Services</h2>
                 <p>Comprehensive IT solutions tailored to your business needs</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card animate-on-scroll stagger-animation">
                     <div class="service-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -238,8 +254,23 @@
                     </div>
                     <h3>Cloud Infrastructure</h3>
                     <p>Scalable cloud solutions across AWS, Azure, and Google Cloud. Migration, setup, and ongoing management for optimal performance.</p>
+                    <div class="service-details">
+                        <p><strong>Services include:</strong></p>
+                        <ul>
+                            <li>Cloud migration planning and execution</li>
+                            <li>Multi-cloud architecture design</li>
+                            <li>Cost optimization and monitoring</li>
+                            <li>Disaster recovery solutions</li>
+                        </ul>
+                    </div>
+                    <button class="service-toggle btn-secondary" onclick="toggleService(this)">
+                        Learn More 
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
                 </div>
-                <div class="service-card">
+                <div class="service-card animate-on-scroll stagger-animation">
                     <div class="service-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
@@ -247,8 +278,23 @@
                     </div>
                     <h3>Cybersecurity</h3>
                     <p>Comprehensive security solutions including threat assessment, firewall management, and employee training to protect your business.</p>
+                    <div class="service-details">
+                        <p><strong>Security services:</strong></p>
+                        <ul>
+                            <li>Vulnerability assessments and penetration testing</li>
+                            <li>Firewall configuration and management</li>
+                            <li>Employee security training programs</li>
+                            <li>Incident response and forensics</li>
+                        </ul>
+                    </div>
+                    <button class="service-toggle btn-secondary" onclick="toggleService(this)">
+                        Learn More 
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
                 </div>
-                <div class="service-card">
+                <div class="service-card animate-on-scroll stagger-animation">
                     <div class="service-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
@@ -257,8 +303,23 @@
                     </div>
                     <h3>Network Management</h3>
                     <p>Professional network design, implementation, and maintenance. Ensuring reliable connectivity and optimal performance for your operations.</p>
+                    <div class="service-details">
+                        <p><strong>Network solutions:</strong></p>
+                        <ul>
+                            <li>Network infrastructure design and setup</li>
+                            <li>Wi-Fi optimization and troubleshooting</li>
+                            <li>VPN and remote access solutions</li>
+                            <li>Performance monitoring and optimization</li>
+                        </ul>
+                    </div>
+                    <button class="service-toggle btn-secondary" onclick="toggleService(this)">
+                        Learn More 
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
                 </div>
-                <div class="service-card">
+                <div class="service-card animate-on-scroll stagger-animation">
                     <div class="service-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="3"></circle>
@@ -267,6 +328,21 @@
                     </div>
                     <h3>IT Support</h3>
                     <p>24/7 technical support and maintenance services. Remote and on-site assistance to keep your systems running smoothly.</p>
+                    <div class="service-details">
+                        <p><strong>Support services:</strong></p>
+                        <ul>
+                            <li>24/7 helpdesk and technical support</li>
+                            <li>Remote troubleshooting and maintenance</li>
+                            <li>Hardware replacement and upgrades</li>
+                            <li>Software installation and updates</li>
+                        </ul>
+                    </div>
+                    <button class="service-toggle btn-secondary" onclick="toggleService(this)">
+                        Learn More 
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -275,7 +351,7 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <div class="about-content">
+            <div class="about-content animate-on-scroll">
                 <div class="about-text">
                     <h2>About VIV53</h2>
                     <p class="lead">We specialize in providing comprehensive IT solutions for small and medium businesses that lack dedicated IT staff or have beginner-level IT teams.</p>
@@ -310,78 +386,78 @@
     <!-- Technology Partners Section -->
     <section class="partners">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll">
                 <h2>Technology Partners</h2>
                 <p>We work with industry-leading vendors to deliver comprehensive solutions</p>
             </div>
-            <div class="partners-grid">
-                <div class="partner-item" data-name="Cisco">
+            <div class="partners-grid animate-on-scroll">
+                <div class="partner-item" data-name="Cisco" data-tooltip="Leading networking and cybersecurity solutions for enterprise infrastructure">
                     <div class="partner-icon">
                         <img src="https://logo.clearbit.com/cisco.com" alt="Cisco" width="60" height="60">
                     </div>
                     <span class="partner-name">Cisco</span>
                 </div>
-                <div class="partner-item" data-name="VMware">
+                <div class="partner-item" data-name="VMware" data-tooltip="Virtualization and cloud computing infrastructure solutions">
                     <div class="partner-icon">
                         <img src="https://logo.clearbit.com/vmware.com" alt="VMware" width="60" height="60">
                     </div>
                     <span class="partner-name">VMware</span>
                 </div>
-                <div class="partner-item" data-name="Red Hat">
+                <div class="partner-item" data-name="Red Hat" data-tooltip="Open source enterprise software and cloud solutions">
                     <div class="partner-icon">
                         <img src="https://logo.clearbit.com/redhat.com" alt="Red Hat" width="60" height="60">
                     </div>
                     <span class="partner-name">Red Hat</span>
                 </div>
-                <div class="partner-item" data-name="Microsoft">
+                <div class="partner-item" data-name="Microsoft" data-tooltip="Cloud services, productivity software, and enterprise solutions">
                     <div class="partner-icon">
                         <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" width="60" height="60">
                     </div>
                     <span class="partner-name">Microsoft</span>
                 </div>
-                <div class="partner-item" data-name="Ubuntu">
+                <div class="partner-item" data-name="Ubuntu" data-tooltip="Leading Linux distribution for servers and development">
                     <div class="partner-icon">
                         <img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" alt="Ubuntu" width="60" height="60">
                     </div>
                     <span class="partner-name">Ubuntu</span>
                 </div>
-                <div class="partner-item" data-name="AWS">
+                <div class="partner-item" data-name="AWS" data-tooltip="Amazon Web Services - comprehensive cloud computing platform">
                     <div class="partner-icon">
                         <img src="https://logo.clearbit.com/aws.amazon.com" alt="AWS" width="60" height="60">
                     </div>
                     <span class="partner-name">AWS</span>
                 </div>
-                <div class="partner-item" data-name="Azure">
+                <div class="partner-item" data-name="Azure" data-tooltip="Microsoft's cloud platform for building and deploying applications">
                     <div class="partner-icon">
                         <img src="https://logo.clearbit.com/azure.microsoft.com" alt="Microsoft Azure" width="60" height="60">
                     </div>
                     <span class="partner-name">Microsoft Azure</span>
                 </div>
-                <div class="partner-item" data-name="Google Cloud">
+                <div class="partner-item" data-name="Google Cloud" data-tooltip="Google's cloud computing services and infrastructure">
                     <div class="partner-icon">
                         <img src="https://logo.clearbit.com/cloud.google.com" alt="Google Cloud" width="60" height="60">
                     </div>
                     <span class="partner-name">Google Cloud</span>
                 </div>
-                <div class="partner-item" data-name="Oracle">
+                <div class="partner-item" data-name="Oracle" data-tooltip="Database management systems and enterprise software solutions">
                     <div class="partner-icon">
                         <img src="https://logo.clearbit.com/oracle.com" alt="Oracle" width="60" height="60">
                     </div>
                     <span class="partner-name">Oracle</span>
                 </div>
-                <div class="partner-item" data-name="Docker">
+                <div class="partner-item" data-name="Docker" data-tooltip="Containerization platform for application deployment and scaling">
                     <div class="partner-icon">
                         <img src="https://logo.clearbit.com/docker.com" alt="Docker" width="60" height="60">
                     </div>
                     <span class="partner-name">Docker</span>
                 </div>
-                <div class="partner-item" data-name="NetApp">
+                <div class="partner-item" data-name="NetApp" data-tooltip="Data storage and management solutions for hybrid cloud environments">
                     <div class="partner-icon">
                         <img src="https://logo.clearbit.com/netapp.com" alt="NetApp" width="60" height="60">
                     </div>
                     <span class="partner-name">NetApp</span>
                 </div>
-                <div class="partner-item" data-name="Juniper">
+                <div class="partner-item" data-name="Juniper" data-tooltip="High-performance networking equipment and security solutions">
                     <div class="partner-icon">
                         <img src="https://logo.clearbit.com/juniper.net" alt="Juniper Networks" width="60" height="60">
                     </div>
@@ -394,11 +470,11 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll">
                 <h2>Get In Touch</h2>
                 <p>Ready to elevate your IT infrastructure? Contact us today for a consultation.</p>
             </div>
-            <div class="contact-content">
+            <div class="contact-content animate-on-scroll">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
                     <div class="contact-item">
@@ -456,7 +532,10 @@
                     </div>
                     <div class="form-group">
                         <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
+                        <div class="input-wrapper">
+                            <input type="email" id="email" name="email" required>
+                            <div class="input-feedback" id="email-feedback"></div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="company">Company</label>
@@ -477,12 +556,26 @@
                         <label for="message">Message *</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary" id="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-spinner" style="display: none;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 12a9 9 0 11-6.219-8.56"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="form-success" id="form-success">
+                        <strong>Message sent successfully!</strong><br>
+                        Thank you for your interest. We'll get back to you within 24 hours.
+                    </div>
                 </form>
             </div>
         </div>
     </section>
     </main>
+
+    <!-- Tooltip -->
+    <div class="tooltip" id="tooltip" role="tooltip"></div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -560,6 +653,60 @@
     </div>
 
     <script src="js/main.js"></script>
+    
+    <!-- Demo Banner Script -->
+    <script>
+    // Demo Banner Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const demoBanner = document.getElementById('demo-banner');
+        const demoClose = document.getElementById('demo-close');
+        const heroSection = document.querySelector('.hero');
+        
+        // Show demo banner after a short delay
+        setTimeout(() => {
+            demoBanner.classList.add('visible');
+            if (heroSection) {
+                heroSection.classList.add('demo-active');
+            }
+        }, 1000);
+        
+        // Close demo banner
+        demoClose.addEventListener('click', function() {
+            demoBanner.classList.remove('visible');
+            if (heroSection) {
+                heroSection.classList.remove('demo-active');
+            }
+            
+            // Store in localStorage to remember user's choice
+            localStorage.setItem('demoBannerClosed', 'true');
+        });
+        
+        // Check if user previously closed the banner
+        if (localStorage.getItem('demoBannerClosed') === 'true') {
+            demoBanner.style.display = 'none';
+            if (heroSection) {
+                heroSection.classList.remove('demo-active');
+            }
+        }
+    });
+    
+    // Service card toggle functionality
+    window.toggleService = function(button) {
+        const serviceCard = button.closest('.service-card');
+        const serviceDetails = serviceCard.querySelector('.service-details');
+        const isExpanded = serviceDetails.classList.contains('expanded');
+        
+        if (isExpanded) {
+            serviceDetails.classList.remove('expanded');
+            button.classList.remove('expanded');
+            button.innerHTML = 'Learn More <span style="margin-left: 0.5rem;">▼</span>';
+        } else {
+            serviceDetails.classList.add('expanded');
+            button.classList.add('expanded');
+            button.innerHTML = 'Show Less <span style="margin-left: 0.5rem;">▲</span>';
+        }
+    };
+    </script>
     
     <!-- Inline Go-to-Top Button Script (fallback) -->
     <script>
