@@ -280,6 +280,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 300);
 });
 
+// Hero GIF Loading Management
+function initHeroGif() {
+    const gifContainer = document.querySelector('.hero-gif-container');
+    const gif = document.querySelector('.hero-gif');
+    
+    if (!gifContainer || !gif) return;
+    
+    // Only load on desktop with good connection
+    if (window.innerWidth > 1024 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        
+        // Check connection speed (if available)
+        if ('connection' in navigator) {
+            const connection = navigator.connection;
+            // Only load on fast connections (4g, wifi)
+            if (connection.effectiveType === '4g' || connection.effectiveType === 'wifi') {
+                loadHeroGif();
+            }
+        } else {
+            // Fallback: load after delay
+            setTimeout(loadHeroGif, 2000);
+        }
+    }
+    
+    function loadHeroGif() {
+        // Create a new image to preload
+        const preloadImg = new Image();
+        preloadImg.onload = () => {
+            // Show container once loaded
+            gifContainer.style.display = 'block';
+            console.log('🎬 Hero GIF loaded successfully');
+        };
+        preloadImg.onerror = () => {
+            console.log('❌ Hero GIF failed to load');
+        };
+        preloadImg.src = gif.src;
+    }
+}
+
 // Console welcome message
 console.log('%c🚀 VIV53 IT Services Website', 'color: #d4af37; font-size: 16px; font-weight: bold;');
 console.log('%cBuilt with modern web technologies for optimal performance', 'color: #b0b0b0; font-size: 12px;');
+
+// Initialize hero GIF loading
+document.addEventListener('DOMContentLoaded', initHeroGif);

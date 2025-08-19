@@ -147,7 +147,8 @@ body {
     height: 100%;
     z-index: -2;
     opacity: 0;
-    animation: fadeInGif 2s ease-in-out 0.5s forwards;
+    animation: fadeInGif 3s ease-in-out 1s forwards;
+    display: none; /* Start hidden for better loading */
 }
 
 .hero-gif {
@@ -158,20 +159,24 @@ body {
     filter: brightness(0.7) contrast(1.1);
 }
 
-/* Performance optimizations for slower connections */
-@media (prefers-reduced-motion: reduce) {
+/* Show GIF only on fast connections and desktop */
+@media (min-width: 769px) and (prefers-reduced-motion: no-preference) {
     .hero-gif-container {
-        display: none;
-    }
-    .hero-background {
-        background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+        display: block;
     }
 }
 
-/* Hide GIF on mobile to save bandwidth */
-@media (max-width: 768px) {
+/* Performance optimizations for slower connections */
+@media (prefers-reduced-motion: reduce) {
     .hero-gif-container {
-        display: none;
+        display: none !important;
+    }
+}
+
+/* Hide GIF on mobile and tablets to save bandwidth */
+@media (max-width: 1024px) {
+    .hero-gif-container {
+        display: none !important;
     }
 }
 
