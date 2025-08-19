@@ -1,0 +1,23 @@
+{
+  "name": "viv53-demo-landing",
+  "version": "1.0.0",
+  "description": "VIV53 IT Services demo landing page",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .js,.html --report-unused-disable-directives --max-warnings 0"
+  },
+  "keywords": ["landing-page", "it-services", "viv53", "demo"],
+  "author": "Angel Inglese",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "eslint": "^8.0.0",
+    "@vitejs/plugin-legacy": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
