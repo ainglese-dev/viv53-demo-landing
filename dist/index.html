@@ -559,5 +559,52 @@
     </div>
 
     <script src="/viv53-demo-landing/js/main.js"></script>
+    
+    <!-- Inline Go-to-Top Button Script (fallback) -->
+    <script>
+    // Ensure Go-to-Top functionality works even if main.js fails
+    document.addEventListener('DOMContentLoaded', function() {
+        const goToTopBtn = document.getElementById('go-to-top');
+        if (!goToTopBtn) return;
+        
+        const scrollThreshold = 300;
+        
+        function toggleGoToTopButton() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > scrollThreshold) {
+                goToTopBtn.classList.add('visible');
+                goToTopBtn.style.display = 'block';
+            } else {
+                goToTopBtn.classList.remove('visible');
+            }
+        }
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Event listeners
+        window.addEventListener('scroll', toggleGoToTopButton);
+        
+        // Click handler
+        const goToTopButton = goToTopBtn.querySelector('.go-to-top-btn');
+        if (goToTopButton) {
+            goToTopButton.addEventListener('click', scrollToTop);
+        }
+        
+        goToTopBtn.addEventListener('click', function(e) {
+            if (e.target === goToTopBtn || e.target.closest('.go-to-top-btn')) {
+                scrollToTop();
+            }
+        });
+        
+        // Initial check
+        toggleGoToTopButton();
+    });
+    </script>
 </body>
 </html>
