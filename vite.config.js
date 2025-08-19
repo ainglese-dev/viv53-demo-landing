@@ -7,10 +7,7 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: 'src/index.html',
-        about: 'src/pages/about.html',
-        services: 'src/pages/services.html',
-        contact: 'src/pages/contact.html'
+        main: 'src/index.html'
       }
     }
   },
