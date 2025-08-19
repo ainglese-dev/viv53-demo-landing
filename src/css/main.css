@@ -82,11 +82,40 @@ body {
 }
 
 .nav-logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 45px;
+    width: auto;
+    max-width: 180px;
+    transition: var(--transition);
+}
+
+/* For better SVG handling */
+.logo-image:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.logo-fallback {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--accent-gold);
-    text-decoration: none;
     letter-spacing: -0.5px;
+    display: none;
+}
+
+/* Show fallback text if image fails to load */
+.logo-image:not([src]), .logo-image[src=""] {
+    display: none;
+}
+
+.logo-image:not([src]) + .logo-fallback, 
+.logo-image[src=""] + .logo-fallback {
+    display: inline;
 }
 
 .nav-menu {
