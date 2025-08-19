@@ -138,6 +138,43 @@ body {
     z-index: -2;
 }
 
+/* Hero GIF Container */
+.hero-gif-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0;
+    animation: fadeInGif 2s ease-in-out 0.5s forwards;
+}
+
+.hero-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.7) contrast(1.1);
+}
+
+/* Performance optimizations for slower connections */
+@media (prefers-reduced-motion: reduce) {
+    .hero-gif-container {
+        display: none;
+    }
+    .hero-background {
+        background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+    }
+}
+
+/* Hide GIF on mobile to save bandwidth */
+@media (max-width: 768px) {
+    .hero-gif-container {
+        display: none;
+    }
+}
+
 .hero-background::before {
     content: '';
     position: absolute;
@@ -156,13 +193,22 @@ body {
     50% { transform: translateY(-20px); }
 }
 
+@keyframes fadeInGif {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
     z-index: -1;
 }
 
