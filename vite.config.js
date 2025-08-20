@@ -14,7 +14,7 @@ export default defineConfig({
       }
     }
   },
-  base: '/viv53-demo-landing/',
+  base: '/',
   server: {
     port: 3000,
     open: true
