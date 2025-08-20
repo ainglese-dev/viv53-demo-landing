@@ -59,6 +59,12 @@ body {
     transform: translateY(0);
 }
 
+.demo-banner.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
 .demo-banner-content {
     display: flex;
     align-items: center;

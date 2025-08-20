@@ -153,8 +153,8 @@
       src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXX&ev=PageView&noscript=1"
     /></noscript>
     -->
-  <script type="module" crossorigin src="/assets/main-BixuUe7z.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-D6trw8Ok.css">
+  <script type="module" crossorigin src="/assets/main-DxKWC40L.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-h159p2lq.css">
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -661,32 +661,51 @@
         const demoClose = document.getElementById('demo-close');
         const heroSection = document.querySelector('.hero');
         
-        // Show demo banner after a short delay
-        setTimeout(() => {
-            demoBanner.classList.add('visible');
+        // Check if elements exist before proceeding
+        if (!demoBanner || !demoClose) {
+            console.warn('Demo banner elements not found');
+            return;
+        }
+        
+        // Check if user previously closed the banner
+        const bannerClosed = localStorage.getItem('demoBannerClosed') === 'true';
+        
+        if (bannerClosed) {
+            // Keep banner hidden permanently
+            demoBanner.classList.add('hidden');
             if (heroSection) {
-                heroSection.classList.add('demo-active');
+                heroSection.classList.remove('demo-active');
             }
-        }, 1000);
+        } else {
+            // Show demo banner after a short delay
+            setTimeout(() => {
+                demoBanner.classList.add('visible');
+                if (heroSection) {
+                    heroSection.classList.add('demo-active');
+                }
+            }, 1000);
+        }
         
         // Close demo banner
-        demoClose.addEventListener('click', function() {
+        demoClose.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Add closing animation
             demoBanner.classList.remove('visible');
+            demoBanner.classList.add('hidden');
+            
             if (heroSection) {
                 heroSection.classList.remove('demo-active');
             }
             
             // Store in localStorage to remember user's choice
-            localStorage.setItem('demoBannerClosed', 'true');
-        });
-        
-        // Check if user previously closed the banner
-        if (localStorage.getItem('demoBannerClosed') === 'true') {
-            demoBanner.style.display = 'none';
-            if (heroSection) {
-                heroSection.classList.remove('demo-active');
+            try {
+                localStorage.setItem('demoBannerClosed', 'true');
+            } catch (error) {
+                console.warn('Failed to save banner state to localStorage:', error);
             }
-        }
+        });
     });
     
     // Service card toggle functionality
