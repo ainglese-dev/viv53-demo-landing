@@ -93,6 +93,7 @@ navLinks.forEach((link, index) => {
 
 // Navbar background on scroll
 const navbar = document.getElementById('navbar');
+const demoBanner = document.getElementById('demo-banner');
 let lastScrollTop = 0;
 
 window.addEventListener('scroll', () => {
@@ -107,11 +108,21 @@ window.addEventListener('scroll', () => {
         navbar.style.backdropFilter = 'blur(10px)';
     }
     
-    // Hide/show navbar on scroll (optional)
-    if (scrollTop > lastScrollTop && scrollTop > 200) {
+    // Hide/show navbar and demo banner on scroll
+    const isScrollingDown = scrollTop > lastScrollTop && scrollTop > 200;
+    
+    if (isScrollingDown) {
         navbar.style.transform = 'translateY(-100%)';
+        // Hide demo banner too, but only if it's visible (not permanently hidden by X click)
+        if (demoBanner && !demoBanner.classList.contains('hidden')) {
+            demoBanner.style.transform = 'translateY(-100%)';
+        }
     } else {
         navbar.style.transform = 'translateY(0)';
+        // Show demo banner too, but only if it's visible (not permanently hidden by X click)
+        if (demoBanner && !demoBanner.classList.contains('hidden')) {
+            demoBanner.style.transform = 'translateY(0)';
+        }
     }
     
     lastScrollTop = scrollTop;
