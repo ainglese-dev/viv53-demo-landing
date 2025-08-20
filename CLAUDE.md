@@ -66,7 +66,7 @@ This project is in active development. Current implementation status:
   - High z-index (1000) ensures visibility above all content
 
 **Current Deployment:**
-- GitHub Pages: `https://ainglese-dev.github.io/viv53-demo-landing/`
+- Custom Domain: `https://www.viv53.com/`
 - Build: Vite with single-page configuration
 - Status: Fully functional and deployed
 
