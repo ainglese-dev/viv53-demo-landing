@@ -51,7 +51,7 @@ body {
     color: var(--primary-bg);
     z-index: 999;
     transform: translateY(-100%);
-    transition: transform 0.4s ease;
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s linear 0.4s, z-index 0s linear 0.4s;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -63,6 +63,9 @@ body {
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
+    z-index: -1;
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s linear 0s, z-index 0s linear 0s;
 }
 
 .demo-banner-content {
