@@ -814,18 +814,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const caseStudyCards = document.querySelectorAll('.case-study-card');
     
+    console.log('Case Studies Filter Init:', {
+        filterButtons: filterButtons.length,
+        caseStudyCards: caseStudyCards.length
+    });
+    
+    // Initially show all cards
+    caseStudyCards.forEach(card => {
+        card.style.display = 'block';
+    });
+    
     if (filterButtons.length > 0 && caseStudyCards.length > 0) {
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const filter = button.getAttribute('data-filter');
+                console.log('Filter clicked:', filter);
                 
                 // Update active button
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
                 
                 // Filter cards
-                caseStudyCards.forEach(card => {
-                    const categories = card.getAttribute('data-category').split(' ');
+                caseStudyCards.forEach((card, index) => {
+                    const categoryAttr = card.getAttribute('data-category') || '';
+                    const categories = categoryAttr.split(' ').filter(cat => cat.trim() !== '');
+                    
+                    console.log(`Card ${index}:`, {
+                        categoryAttr,
+                        categories,
+                        shouldShow: filter === 'all' || categories.includes(filter)
+                    });
                     
                     if (filter === 'all' || categories.includes(filter)) {
                         card.style.display = 'block';
