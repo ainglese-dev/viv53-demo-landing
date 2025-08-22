@@ -153,8 +153,8 @@
       src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXX&ev=PageView&noscript=1"
     /></noscript>
     -->
-  <script type="module" crossorigin src="/assets/main-DejZRXVu.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-CYhEX_Bo.css">
+  <script type="module" crossorigin src="/assets/main-tskyCIzd.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-BNHcs0gX.css">
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -555,6 +555,19 @@
                     <div class="form-group">
                         <label for="message">Message *</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group captcha-group">
+                        <label for="captcha-input">Verification (Solve: ___ = ?) *</label>
+                        <div class="captcha-container">
+                            <button type="button" class="btn-refresh-captcha" id="refresh-captcha" aria-label="Refresh CAPTCHA">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="23,4 23,10 17,10"></polyline>
+                                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <input type="text" class="jCaptcha" id="captcha-input" name="captcha" maxlength="2" placeholder="Enter the answer" required>
+                        <div class="captcha-feedback" id="captcha-feedback"></div>
                     </div>
                     <button type="submit" class="btn btn-primary" id="submit-btn">
                         <span class="btn-text">Send Message</span>

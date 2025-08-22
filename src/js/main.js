@@ -1,3 +1,6 @@
+// Import js-captcha library
+import jCaptcha from 'js-captcha';
+
 // Mobile Navigation Toggle with Error Handling
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
@@ -131,6 +134,57 @@ window.addEventListener('scroll', () => {
 // Enhanced Contact Form Handling
 const contactForm = document.getElementById('contact-form');
 
+// Initialize CAPTCHA
+let myCaptcha = null;
+document.addEventListener('DOMContentLoaded', () => {
+    const captchaInput = document.querySelector('.jCaptcha');
+    const captchaFeedback = document.getElementById('captcha-feedback');
+    const refreshBtn = document.getElementById('refresh-captcha');
+    
+    if (captchaInput) {
+        myCaptcha = new jCaptcha({
+            el: '.jCaptcha',
+            canvasClass: 'jCaptchaCanvas',
+            canvasStyle: {
+                width: 150,
+                height: 40,
+                textBaseline: 'middle',
+                font: '20px Inter, Arial',
+                textAlign: 'left',
+                fillStyle: '#d4af37'
+            },
+            callback: (response, element, numberOfTries) => {
+                if (response === 'success') {
+                    captchaFeedback.className = 'captcha-feedback success';
+                    captchaFeedback.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"></polyline></svg> Correct!';
+                    element.classList.remove('invalid');
+                    element.classList.add('valid');
+                } else {
+                    captchaFeedback.className = 'captcha-feedback error';
+                    captchaFeedback.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Please try again';
+                    element.classList.remove('valid');
+                    element.classList.add('invalid');
+                    
+                    if (numberOfTries >= 3) {
+                        captchaFeedback.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Maximum attempts reached. Please refresh.';
+                    }
+                }
+            }
+        });
+        
+        // Refresh button handler
+        if (refreshBtn) {
+            refreshBtn.addEventListener('click', () => {
+                myCaptcha.reset();
+                captchaFeedback.className = 'captcha-feedback';
+                captchaFeedback.innerHTML = '';
+                captchaInput.classList.remove('valid', 'invalid');
+                captchaInput.value = '';
+            });
+        }
+    }
+});
+
 // Real-time email validation
 const emailInput = document.getElementById('email');
 const emailFeedback = document.getElementById('email-feedback');
@@ -180,9 +234,36 @@ contactForm.addEventListener('submit', async (e) => {
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
+    const captchaValue = document.getElementById('captcha-input').value.trim();
     
     if (!name || !email || !message || !validateEmail(email)) {
         showNotification('Please fill in all required fields with valid information.', 'error');
+        return;
+    }
+    
+    // Validate CAPTCHA before submitting
+    if (!captchaValue) {
+        showNotification('Please solve the verification challenge.', 'error');
+        document.getElementById('captcha-input').focus();
+        return;
+    }
+    
+    // Validate CAPTCHA
+    let captchaValid = false;
+    const originalCallback = myCaptcha.options.callback;
+    
+    myCaptcha.options.callback = (response) => {
+        if (response === 'success') {
+            captchaValid = true;
+        }
+        // Restore original callback
+        myCaptcha.options.callback = originalCallback;
+    };
+    
+    myCaptcha.validate();
+    
+    if (!captchaValid) {
+        showNotification('Please solve the verification challenge correctly.', 'error');
         return;
     }
     
@@ -239,6 +320,20 @@ contactForm.addEventListener('submit', async (e) => {
         contactForm.reset();
         emailFeedback.className = 'input-feedback';
         emailInput.classList.remove('valid', 'invalid');
+        
+        // Reset CAPTCHA after successful submission
+        if (myCaptcha) {
+            myCaptcha.reset();
+            const captchaFeedback = document.getElementById('captcha-feedback');
+            const captchaInput = document.getElementById('captcha-input');
+            if (captchaFeedback) {
+                captchaFeedback.className = 'captcha-feedback';
+                captchaFeedback.innerHTML = '';
+            }
+            if (captchaInput) {
+                captchaInput.classList.remove('valid', 'invalid');
+            }
+        }
         
         // Hide success message after 5 seconds
         setTimeout(() => {
