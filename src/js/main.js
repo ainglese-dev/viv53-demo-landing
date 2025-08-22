@@ -857,50 +857,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Booking Form Functionality
+// Unified Contact/Booking Form Functionality
 document.addEventListener('DOMContentLoaded', () => {
-    const bookingForm = document.getElementById('booking-form');
-    const bookingSuccess = document.getElementById('booking-success');
+    const requestTypeSelect = document.getElementById('request-type');
+    const phoneGroup = document.getElementById('phone-group');
+    const phoneInput = document.getElementById('phone');
+    const preferredTimeGroup = document.getElementById('preferred-time-group');
+    const consultationInfo = document.getElementById('consultation-info');
+    const defaultInfo = document.getElementById('default-info');
+    const successTitle = document.getElementById('success-title');
+    const successMessage = document.getElementById('success-message');
     
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
+    if (requestTypeSelect) {
+        requestTypeSelect.addEventListener('change', (e) => {
+            const selectedValue = e.target.value;
             
-            const submitBtn = document.getElementById('booking-submit');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const btnSpinner = submitBtn.querySelector('.btn-spinner');
-            
-            // Show loading state
-            submitBtn.disabled = true;
-            btnText.textContent = 'Scheduling...';
-            btnSpinner.style.display = 'inline-block';
-            
-            try {
-                // Simulate form submission (replace with actual Google Forms submission)
-                setTimeout(() => {
-                    // Hide form and show success message
-                    bookingForm.style.display = 'none';
-                    bookingSuccess.style.display = 'block';
-                    
-                    // Smooth scroll to success message
-                    bookingSuccess.scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'center' 
-                    });
-                    
-                    // Reset button state (in case user goes back)
-                    submitBtn.disabled = false;
-                    btnText.textContent = 'Schedule Consultation';
-                    btnSpinner.style.display = 'none';
-                }, 2000);
+            if (selectedValue === 'schedule-consultation') {
+                // Show consultation-specific fields
+                phoneGroup.style.display = 'block';
+                phoneInput.required = true;
+                preferredTimeGroup.style.display = 'block';
                 
-            } catch (error) {
-                console.error('Booking submission error:', error);
-                submitBtn.disabled = false;
-                btnText.textContent = 'Schedule Consultation';
-                btnSpinner.style.display = 'none';
+                // Show consultation benefits, hide contact info
+                if (consultationInfo) consultationInfo.style.display = 'block';
+                if (defaultInfo) defaultInfo.style.display = 'none';
                 
-                showNotification('Error submitting booking request. Please try again or contact us directly.', 'error');
+                // Update success message for consultation
+                if (successTitle) successTitle.textContent = 'Consultation Request Received!';
+                if (successMessage) successMessage.textContent = 'Thank you! We\'ll contact you within 24 hours to confirm your consultation time and send you a Google Meet link.';
+                
+            } else {
+                // Hide consultation-specific fields
+                phoneGroup.style.display = 'none';
+                phoneInput.required = false;
+                preferredTimeGroup.style.display = 'none';
+                
+                // Show contact info, hide consultation benefits
+                if (consultationInfo) consultationInfo.style.display = 'none';
+                if (defaultInfo) defaultInfo.style.display = 'block';
+                
+                // Update success message for general contact
+                if (successTitle) successTitle.textContent = 'Message sent successfully!';
+                if (successMessage) successMessage.textContent = 'Thank you for your interest. We\'ll get back to you within 24 hours.';
             }
         });
     }

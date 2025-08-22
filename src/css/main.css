@@ -2148,72 +2148,22 @@ textarea:focus {
     }
 }
 
-/* Booking Section Styles */
-.booking {
-    padding: 5rem 0;
-    background: var(--secondary-bg);
+/* Enhanced Contact Section for Unified Form */
+.contact-form-container {
+    flex: 1;
+    max-width: 600px;
 }
 
-.booking-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-top: 3rem;
+.contact-info-section {
+    flex: 1;
+    padding-left: 2rem;
 }
 
-.booking-form {
-    background: var(--primary-bg);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
+.what-to-expect {
+    margin-bottom: 2rem;
 }
 
-.booking-form .form-group {
-    margin-bottom: 1.5rem;
-}
-
-.booking-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-    font-weight: 500;
-}
-
-.booking-form input,
-.booking-form select,
-.booking-form textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    background: var(--secondary-bg);
-    color: var(--text-primary);
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.booking-form input:focus,
-.booking-form select:focus,
-.booking-form textarea:focus {
-    outline: none;
-    border-color: var(--accent-gold);
-    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
-}
-
-.booking-form select {
-    cursor: pointer;
-}
-
-.booking-form textarea {
-    resize: vertical;
-    min-height: 80px;
-}
-
-.booking-info {
-    padding: 2rem;
-}
-
-.booking-info h3 {
+.what-to-expect h3 {
     color: var(--accent-gold);
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
@@ -2271,16 +2221,15 @@ textarea:focus {
     color: var(--accent-gold);
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive for Unified Form */
 @media (max-width: 768px) {
-    .booking-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .contact-content {
+        flex-direction: column;
     }
     
-    .booking-form,
-    .booking-info {
-        padding: 1.5rem;
+    .contact-info-section {
+        padding-left: 0;
+        padding-top: 2rem;
     }
     
     .booking-benefits li {
