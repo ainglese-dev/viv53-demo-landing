@@ -1,5 +1,84 @@
-// Import js-captcha library
-import jCaptcha from 'js-captcha';
+// Simple Custom CAPTCHA Implementation
+class SimpleCaptcha {
+    constructor(options) {
+        this.options = {
+            canvasSelector: options.canvasSelector || '.captcha-canvas',
+            inputSelector: options.inputSelector || '.captcha-input',
+            width: options.width || 150,
+            height: options.height || 40,
+            font: options.font || '20px Inter, Arial',
+            textColor: options.textColor || '#d4af37',
+            bgColor: options.bgColor || '#1a1a1a',
+            callback: options.callback || null
+        };
+        
+        this.currentAnswer = 0;
+        this.canvas = null;
+        this.ctx = null;
+        this.input = null;
+        
+        this.init();
+    }
+    
+    init() {
+        this.canvas = document.querySelector(this.options.canvasSelector);
+        this.input = document.querySelector(this.options.inputSelector);
+        
+        if (this.canvas) {
+            this.ctx = this.canvas.getContext('2d');
+            this.generate();
+        }
+    }
+    
+    generate() {
+        const num1 = Math.floor(Math.random() * 9) + 1;
+        const num2 = Math.floor(Math.random() * 9) + 1;
+        this.currentAnswer = num1 + num2;
+        
+        // Clear canvas
+        this.ctx.fillStyle = this.options.bgColor;
+        this.ctx.fillRect(0, 0, this.options.width, this.options.height);
+        
+        // Draw text
+        this.ctx.font = this.options.font;
+        this.ctx.fillStyle = this.options.textColor;
+        this.ctx.textAlign = 'center';
+        this.ctx.textBaseline = 'middle';
+        
+        const text = `${num1} + ${num2} = ?`;
+        this.ctx.fillText(text, this.options.width / 2, this.options.height / 2);
+        
+        // Add some noise lines
+        this.ctx.strokeStyle = this.options.textColor;
+        this.ctx.lineWidth = 1;
+        for (let i = 0; i < 3; i++) {
+            this.ctx.beginPath();
+            this.ctx.moveTo(Math.random() * this.options.width, Math.random() * this.options.height);
+            this.ctx.lineTo(Math.random() * this.options.width, Math.random() * this.options.height);
+            this.ctx.stroke();
+        }
+    }
+    
+    validate() {
+        if (!this.input) return false;
+        
+        const userAnswer = parseInt(this.input.value.trim());
+        const isValid = userAnswer === this.currentAnswer;
+        
+        if (this.options.callback) {
+            this.options.callback(isValid ? 'success' : 'error', this.input);
+        }
+        
+        return isValid;
+    }
+    
+    reset() {
+        this.generate();
+        if (this.input) {
+            this.input.value = '';
+        }
+    }
+}
 
 // Mobile Navigation Toggle with Error Handling
 const hamburger = document.getElementById('hamburger');
@@ -137,23 +216,21 @@ const contactForm = document.getElementById('contact-form');
 // Initialize CAPTCHA
 let myCaptcha = null;
 document.addEventListener('DOMContentLoaded', () => {
-    const captchaInput = document.querySelector('.jCaptcha');
+    const captchaInput = document.querySelector('.captcha-input');
+    const captchaCanvas = document.querySelector('.captcha-canvas');
     const captchaFeedback = document.getElementById('captcha-feedback');
     const refreshBtn = document.getElementById('refresh-captcha');
     
-    if (captchaInput) {
-        myCaptcha = new jCaptcha({
-            el: '.jCaptcha',
-            canvasClass: 'jCaptchaCanvas',
-            canvasStyle: {
-                width: 150,
-                height: 40,
-                textBaseline: 'middle',
-                font: '20px Inter, Arial',
-                textAlign: 'left',
-                fillStyle: '#d4af37'
-            },
-            callback: (response, element, numberOfTries) => {
+    if (captchaInput && captchaCanvas) {
+        myCaptcha = new SimpleCaptcha({
+            canvasSelector: '.captcha-canvas',
+            inputSelector: '.captcha-input',
+            width: 150,
+            height: 40,
+            font: '20px Inter, Arial',
+            textColor: '#d4af37',
+            bgColor: '#1a1a1a',
+            callback: (response, element) => {
                 if (response === 'success') {
                     captchaFeedback.className = 'captcha-feedback success';
                     captchaFeedback.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"></polyline></svg> Correct!';
@@ -164,10 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     captchaFeedback.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Please try again';
                     element.classList.remove('valid');
                     element.classList.add('invalid');
-                    
-                    if (numberOfTries >= 3) {
-                        captchaFeedback.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Maximum attempts reached. Please refresh.';
-                    }
                 }
             }
         });
@@ -179,7 +252,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 captchaFeedback.className = 'captcha-feedback';
                 captchaFeedback.innerHTML = '';
                 captchaInput.classList.remove('valid', 'invalid');
-                captchaInput.value = '';
             });
         }
     }
@@ -249,21 +321,9 @@ contactForm.addEventListener('submit', async (e) => {
     }
     
     // Validate CAPTCHA
-    let captchaValid = false;
-    const originalCallback = myCaptcha.options.callback;
-    
-    myCaptcha.options.callback = (response) => {
-        if (response === 'success') {
-            captchaValid = true;
-        }
-        // Restore original callback
-        myCaptcha.options.callback = originalCallback;
-    };
-    
-    myCaptcha.validate();
-    
-    if (!captchaValid) {
+    if (!myCaptcha || !myCaptcha.validate()) {
         showNotification('Please solve the verification challenge correctly.', 'error');
+        document.getElementById('captcha-input').focus();
         return;
     }
     
