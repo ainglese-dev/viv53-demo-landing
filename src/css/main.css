@@ -310,6 +310,11 @@ body {
     }
 }
 
+/* Always show case studies hero GIF regardless of screen size */
+.case-studies-hero-gif {
+    display: block !important;
+}
+
 /* Performance optimizations for slower connections */
 @media (prefers-reduced-motion: reduce) {
     .hero-gif-container {
