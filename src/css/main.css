@@ -1083,6 +1083,7 @@ section {
 /* Case Studies Grid */
 .case-studies-section {
     padding: 4rem 0;
+    background: var(--primary-bg);
 }
 
 .case-studies-grid {
@@ -1094,7 +1095,7 @@ section {
 }
 
 .case-study-card {
-    background: var(--primary-bg);
+    background: var(--secondary-bg);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     padding: 2.5rem;
