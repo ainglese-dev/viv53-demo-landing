@@ -291,7 +291,7 @@ body {
     height: 100%;
     z-index: -2;
     opacity: 0;
-    animation: fadeInGif 3s ease-in-out 1s forwards;
+    animation: fadeInGif 2s ease-in-out 1s forwards;
     display: none; /* Start hidden for better loading */
 }
 
