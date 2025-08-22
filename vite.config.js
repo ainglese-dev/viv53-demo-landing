@@ -9,6 +9,7 @@ export default defineConfig({
       input: {
         main: 'src/index.html',
         'case-studies': 'src/case-studies.html',
+        'case-studies-simple': 'src/case-studies-simple.html',
         privacy: 'src/privacy.html',
         cookies: 'src/cookies.html',
         'data-protection': 'src/data-protection.html'
