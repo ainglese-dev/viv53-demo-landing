@@ -2148,6 +2148,151 @@ textarea:focus {
     }
 }
 
+/* Booking Section Styles */
+.booking {
+    padding: 5rem 0;
+    background: var(--secondary-bg);
+}
+
+.booking-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.booking-form {
+    background: var(--primary-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.booking-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.booking-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--secondary-bg);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+.booking-form select {
+    cursor: pointer;
+}
+
+.booking-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.booking-info {
+    padding: 2rem;
+}
+
+.booking-info h3 {
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.booking-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.booking-benefits li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--primary-bg);
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-gold);
+}
+
+.benefit-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.benefit-content strong {
+    color: var(--accent-gold);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.benefit-content p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.booking-guarantee {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 6px;
+    text-align: center;
+}
+
+.booking-guarantee p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.booking-guarantee strong {
+    color: var(--accent-gold);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .booking-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .booking-form,
+    .booking-info {
+        padding: 1.5rem;
+    }
+    
+    .booking-benefits li {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .benefit-icon {
+        margin: 0 0 0.5rem 0;
+    }
+}
+
 /* Elements that should be hidden initially for animation */
 .animate-on-scroll {
     opacity: 0;

@@ -187,6 +187,9 @@
                     <a href="#about" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#booking" class="nav-link">Book Call</a>
+                </li>
+                <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
@@ -234,7 +237,8 @@
             <p class="hero-subtitle">Expert on-premises and cloud services across multiple vendors. Empowering SMB companies with reliable IT infrastructure and support.</p>
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-primary">Get Started</a>
-                <a href="#services" class="btn btn-secondary">Our Services</a>
+                <a href="#booking" class="btn btn-secondary">Book a Consultation</a>
+                <a href="#services" class="btn btn-outline">Our Services</a>
             </div>
         </div>
     </section>
@@ -465,6 +469,102 @@
                         <img src="https://logo.clearbit.com/juniper.net" alt="Juniper Networks" width="60" height="60">
                     </div>
                     <span class="partner-name">Juniper Networks</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Book Your Free IT Consultation</h2>
+                <p>Schedule a 30-minute consultation to discuss your business IT needs and get expert recommendations.</p>
+            </div>
+            <div class="booking-content">
+                <div class="booking-form-container animate-on-scroll">
+                    <form id="booking-form" class="booking-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdkHQDG7VLlsYfSxI5QJ0qhqYQY0J5VQJ0J5VQJ0J5VQJ0J5VQ/formResponse" method="POST">
+                        <div class="form-group">
+                            <label for="booking-name">Full Name *</label>
+                            <input type="text" id="booking-name" name="entry.123456789" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-email">Business Email *</label>
+                            <input type="email" id="booking-email" name="entry.987654321" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-phone">Phone Number *</label>
+                            <input type="tel" id="booking-phone" name="entry.555666777" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-company">Company Name</label>
+                            <input type="text" id="booking-company" name="entry.111222333">
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-service">What IT service interests you most? *</label>
+                            <select id="booking-service" name="entry.444555666" required>
+                                <option value="">Select a service</option>
+                                <option value="Cloud Infrastructure">Cloud Infrastructure</option>
+                                <option value="Cybersecurity">Cybersecurity Solutions</option>
+                                <option value="Network Management">Network Management</option>
+                                <option value="IT Support">Ongoing IT Support</option>
+                                <option value="General Consultation">General IT Consultation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-time">Preferred Day & Time</label>
+                            <textarea id="booking-time" name="entry.777888999" placeholder="e.g., Weekdays 9am-5pm, or specific date preference" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-details">Brief description of your IT needs</label>
+                            <textarea id="booking-details" name="entry.333444555" placeholder="Tell us about your current IT challenges or goals..." rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="booking-submit">
+                            <span class="btn-text">Schedule Consultation</span>
+                            <span class="btn-spinner"></span>
+                        </button>
+                    </form>
+                    <div id="booking-success" class="form-success" style="display: none;">
+                        <div class="success-icon">✓</div>
+                        <h3>Consultation Request Received!</h3>
+                        <p>Thank you for your interest! We'll contact you within 24 hours to confirm your consultation time and send you a Google Meet link.</p>
+                    </div>
+                </div>
+                <div class="booking-info animate-on-scroll">
+                    <h3>What to Expect</h3>
+                    <ul class="booking-benefits">
+                        <li>
+                            <div class="benefit-icon">📞</div>
+                            <div class="benefit-content">
+                                <strong>30-Minute Call</strong>
+                                <p>Free consultation via Google Meet or phone</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benefit-icon">🔍</div>
+                            <div class="benefit-content">
+                                <strong>IT Assessment</strong>
+                                <p>We'll discuss your current setup and pain points</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benefit-icon">💡</div>
+                            <div class="benefit-content">
+                                <strong>Expert Recommendations</strong>
+                                <p>Get tailored advice for your business needs</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benefit-icon">📋</div>
+                            <div class="benefit-content">
+                                <strong>Custom Proposal</strong>
+                                <p>Receive a detailed proposal within 48 hours</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="booking-guarantee">
+                        <p><strong>No obligation.</strong> This consultation is completely free with no strings attached.</p>
+                    </div>
                 </div>
             </div>
         </div>

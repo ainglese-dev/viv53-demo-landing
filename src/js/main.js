@@ -856,3 +856,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Booking Form Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const bookingForm = document.getElementById('booking-form');
+    const bookingSuccess = document.getElementById('booking-success');
+    
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('booking-submit');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnSpinner = submitBtn.querySelector('.btn-spinner');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.textContent = 'Scheduling...';
+            btnSpinner.style.display = 'inline-block';
+            
+            try {
+                // Simulate form submission (replace with actual Google Forms submission)
+                setTimeout(() => {
+                    // Hide form and show success message
+                    bookingForm.style.display = 'none';
+                    bookingSuccess.style.display = 'block';
+                    
+                    // Smooth scroll to success message
+                    bookingSuccess.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                    
+                    // Reset button state (in case user goes back)
+                    submitBtn.disabled = false;
+                    btnText.textContent = 'Schedule Consultation';
+                    btnSpinner.style.display = 'none';
+                }, 2000);
+                
+            } catch (error) {
+                console.error('Booking submission error:', error);
+                submitBtn.disabled = false;
+                btnText.textContent = 'Schedule Consultation';
+                btnSpinner.style.display = 'none';
+                
+                showNotification('Error submitting booking request. Please try again or contact us directly.', 'error');
+            }
+        });
+    }
+});
