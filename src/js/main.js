@@ -193,14 +193,13 @@ contactForm.addEventListener('submit', async (e) => {
     
     try {
         // Google Forms Configuration
-        // TODO: Replace with your actual Google Form URL and field IDs
-        const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
+        const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc2euAdM5pwQPoewLx8ZC9CFMzDbVVDi8TW58IcoOah6YNnxg/formResponse';
         const GOOGLE_FORM_FIELDS = {
-            name: 'entry.YOUR_NAME_FIELD_ID',
-            email: 'entry.YOUR_EMAIL_FIELD_ID', 
-            company: 'entry.YOUR_COMPANY_FIELD_ID',
-            service: 'entry.YOUR_SERVICE_FIELD_ID',
-            message: 'entry.YOUR_MESSAGE_FIELD_ID'
+            name: 'entry.234163022',
+            email: 'entry.1224240435', 
+            company: 'entry.250817087',
+            service: 'entry.1240570301',
+            message: 'entry.724764667'
         };
         
         // Get all form data
