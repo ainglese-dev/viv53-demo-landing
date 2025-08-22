@@ -83,8 +83,18 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section with GIF Background -->
-        <section style="padding-top: 100px; padding-bottom: 3rem; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/case-studies-hero.gif'); background-size: cover; background-position: center; background-attachment: fixed; text-align: center;">
-            <div class="container">
+        <section style="position: relative; padding-top: 100px; padding-bottom: 3rem; background: #1a1a1a; text-align: center; overflow: hidden;">
+            <div class="hero-background">
+                <div class="hero-gif-container">
+                    <img src="images/case-studies-hero.gif" 
+                         alt="Case studies dynamic background" 
+                         class="hero-gif"
+                         loading="lazy"
+                         decoding="async">
+                </div>
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container" style="position: relative; z-index: 2;">
                 <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: #d4af37;">Success Stories</h1>
                 <p style="font-size: 1.1rem; color: #b0b0b0; max-width: 600px; margin: 0 auto;">Real results from our SMB clients transforming their IT infrastructure.</p>
             </div>
