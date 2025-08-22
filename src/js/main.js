@@ -192,8 +192,39 @@ contactForm.addEventListener('submit', async (e) => {
     btnSpinner.style.display = 'inline-flex';
     
     try {
-        // Simulate form submission (replace with actual endpoint)
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        // Google Forms Configuration
+        // TODO: Replace with your actual Google Form URL and field IDs
+        const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
+        const GOOGLE_FORM_FIELDS = {
+            name: 'entry.YOUR_NAME_FIELD_ID',
+            email: 'entry.YOUR_EMAIL_FIELD_ID', 
+            company: 'entry.YOUR_COMPANY_FIELD_ID',
+            service: 'entry.YOUR_SERVICE_FIELD_ID',
+            message: 'entry.YOUR_MESSAGE_FIELD_ID'
+        };
+        
+        // Get all form data
+        const company = document.getElementById('company').value.trim();
+        const service = document.getElementById('service').value;
+        
+        // Prepare form data for Google Forms
+        const formData = new FormData();
+        formData.append(GOOGLE_FORM_FIELDS.name, name);
+        formData.append(GOOGLE_FORM_FIELDS.email, email);
+        formData.append(GOOGLE_FORM_FIELDS.company, company || 'Not specified');
+        formData.append(GOOGLE_FORM_FIELDS.service, service || 'General inquiry');
+        formData.append(GOOGLE_FORM_FIELDS.message, message);
+        
+        // Submit to Google Forms
+        const response = await fetch(GOOGLE_FORM_URL, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors' // Required for Google Forms
+        });
+        
+        // Note: Google Forms always returns opaque response with no-cors
+        // We can't check response status, so we assume success
+        console.log('Form submitted to Google Forms');
         
         // Show success message
         formSuccess.classList.add('show');
