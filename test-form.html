@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Forms Test</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 600px; 
+            margin: 50px auto; 
+            padding: 20px; 
+            background: #f5f5f5;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        button {
+            background: #d4af37;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #b8941f;
+        }
+        .test-info {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196F3;
+        }
+        .direct-form {
+            background: #f0f8f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border-left: 4px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>🧪 Google Forms Integration Test</h1>
+        
+        <div class="test-info">
+            <h3>Test Instructions:</h3>
+            <ol>
+                <li>Fill out the form below and click "Test with JavaScript"</li>
+                <li>Open browser console (F12) to see debug output</li>
+                <li>Check your Google Sheets for the submission</li>
+                <li>If it doesn't work, try "Submit Direct to Google" button</li>
+            </ol>
+        </div>
+
+        <!-- JavaScript Test Form (same as website) -->
+        <form id="test-form">
+            <h2>JavaScript Test Form</h2>
+            
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required value="Test User">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required value="test@example.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" value="Test Company">
+            </div>
+            
+            <div class="form-group">
+                <label for="service">Service Interest</label>
+                <select id="service" name="service">
+                    <option value="">Select a service</option>
+                    <option value="cloud" selected>Cloud Infrastructure</option>
+                    <option value="security">Cybersecurity</option>
+                    <option value="network">Network Management</option>
+                    <option value="support">IT Support</option>
+                    <option value="consultation">General Consultation</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required>This is a test message to verify Google Forms integration works correctly.</textarea>
+            </div>
+            
+            <button type="submit">🧪 Test with JavaScript</button>
+            <div id="status" style="margin-top: 10px; padding: 10px; border-radius: 5px; display: none;"></div>
+        </form>
+
+        <!-- Direct Google Form for comparison -->
+        <div class="direct-form">
+            <h3>🎯 Direct Google Form Test</h3>
+            <p>If JavaScript version fails, test direct submission:</p>
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSc2euAdM5pwQPoewLx8ZC9CFMzDbVVDi8TW58IcoOah6YNnxg/formResponse" method="post" target="_blank">
+                <input type="text" name="entry.234163022" value="Direct Test User" placeholder="Name" style="margin: 5px; width: 150px;">
+                <input type="email" name="entry.1224240435" value="direct@test.com" placeholder="Email" style="margin: 5px; width: 150px;">
+                <br>
+                <input type="text" name="entry.250817087" value="Direct Test Co" placeholder="Company" style="margin: 5px; width: 150px;">
+                <select name="entry.1240570301" style="margin: 5px; width: 150px;">
+                    <option value="Cloud Infrastructure">Cloud Infrastructure</option>
+                </select>
+                <br>
+                <textarea name="entry.724764667" placeholder="Direct test message" style="margin: 5px; width: 320px; height: 60px;">Direct form test message</textarea>
+                <br>
+                <button type="submit" style="margin: 5px;">🎯 Submit Direct to Google</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('test-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const status = document.getElementById('status');
+            status.style.display = 'block';
+            status.style.background = '#fff3cd';
+            status.style.color = '#856404';
+            status.textContent = '⏳ Submitting to Google Forms...';
+            
+            try {
+                // Same configuration as main website
+                const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc2euAdM5pwQPoewLx8ZC9CFMzDbVVDi8TW58IcoOah6YNnxg/formResponse';
+                const GOOGLE_FORM_FIELDS = {
+                    name: 'entry.234163022',
+                    email: 'entry.1224240435', 
+                    company: 'entry.250817087',
+                    service: 'entry.1240570301',
+                    message: 'entry.724764667'
+                };
+                
+                // Get form data
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const company = document.getElementById('company').value.trim();
+                const serviceRaw = document.getElementById('service').value;
+                const message = document.getElementById('message').value.trim();
+                
+                // Map service values to match Google Forms options EXACTLY (case-sensitive!)
+                const serviceMap = {
+                    'cloud': 'Cloud Infrastructure',
+                    'security': 'Cybersecurity', 
+                    'network': 'Network Management',
+                    'support': 'IT support',  // Note: lowercase 's' to match Google Form exactly!
+                    'consultation': 'General Consultation'
+                };
+                const service = serviceMap[serviceRaw] || serviceRaw || 'General Consultation';
+                
+                // DEBUG: Log form data
+                console.log('=== GOOGLE FORMS DEBUG ===');
+                console.log('Form URL:', GOOGLE_FORM_URL);
+                console.log('Form Data:', { name, email, company, service, message });
+                console.log('Field Mapping:', GOOGLE_FORM_FIELDS);
+                
+                // Prepare FormData
+                const formData = new FormData();
+                formData.append(GOOGLE_FORM_FIELDS.name, name);
+                formData.append(GOOGLE_FORM_FIELDS.email, email);
+                formData.append(GOOGLE_FORM_FIELDS.company, company || 'Not specified');
+                formData.append(GOOGLE_FORM_FIELDS.service, service || 'General inquiry');
+                formData.append(GOOGLE_FORM_FIELDS.message, message);
+                
+                // DEBUG: Log FormData entries
+                console.log('FormData entries:');
+                for (let pair of formData.entries()) {
+                    console.log(`${pair[0]}: ${pair[1]}`);
+                }
+                
+                console.log('Submitting to Google Forms...');
+                
+                // Submit to Google Forms
+                const response = await fetch(GOOGLE_FORM_URL, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                });
+                
+                console.log('Form submission completed (no-cors mode)');
+                console.log('Response type:', response.type);
+                console.log('=== END DEBUG ===');
+                
+                // Show success
+                status.style.background = '#d4edda';
+                status.style.color = '#155724';
+                status.textContent = '✅ Form submitted! Check console for debug info and Google Sheets for data.';
+                
+            } catch (error) {
+                console.error('Error:', error);
+                status.style.background = '#f8d7da';
+                status.style.color = '#721c24';
+                status.textContent = '❌ Error: ' + error.message;
+            }
+        });
+    </script>
+</body>
+</html>

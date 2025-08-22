@@ -195,19 +195,29 @@ contactForm.addEventListener('submit', async (e) => {
         // Google Forms Configuration
         const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc2euAdM5pwQPoewLx8ZC9CFMzDbVVDi8TW58IcoOah6YNnxg/formResponse';
         const GOOGLE_FORM_FIELDS = {
-            name: 'entry.234163022',
-            email: 'entry.1224240435', 
-            company: 'entry.250817087',
-            service: 'entry.1240570301',
-            message: 'entry.724764667'
+            name: 'entry.1645488632',
+            email: 'entry.881299443', 
+            company: 'entry.2062573081',
+            service: 'entry.697179097',
+            message: 'entry.1555863920'
         };
         
         // Get all form data
         const company = document.getElementById('company').value.trim();
-        const service = document.getElementById('service').value;
+        const serviceRaw = document.getElementById('service').value;
         
-        // Prepare form data for Google Forms
-        const formData = new FormData();
+        // Map service values to match Google Forms options EXACTLY (case-sensitive!)
+        const serviceMap = {
+            'cloud': 'Cloud Infrastructure',
+            'security': 'Cybersecurity', 
+            'network': 'Network Management',
+            'support': 'IT support',  // Note: lowercase 's' to match Google Form exactly!
+            'consultation': 'General Consultation'
+        };
+        const service = serviceMap[serviceRaw] || serviceRaw || 'General Consultation';
+        
+        // Prepare form data for Google Forms using URLSearchParams
+        const formData = new URLSearchParams();
         formData.append(GOOGLE_FORM_FIELDS.name, name);
         formData.append(GOOGLE_FORM_FIELDS.email, email);
         formData.append(GOOGLE_FORM_FIELDS.company, company || 'Not specified');
@@ -218,12 +228,11 @@ contactForm.addEventListener('submit', async (e) => {
         const response = await fetch(GOOGLE_FORM_URL, {
             method: 'POST',
             body: formData,
-            mode: 'no-cors' // Required for Google Forms
+            mode: 'no-cors', // Required for Google Forms
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
         });
-        
-        // Note: Google Forms always returns opaque response with no-cors
-        // We can't check response status, so we assume success
-        console.log('Form submitted to Google Forms');
         
         // Show success message
         formSuccess.classList.add('show');
