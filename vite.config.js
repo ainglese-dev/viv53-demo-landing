@@ -8,6 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'src/index.html',
+        'case-studies': 'src/case-studies.html',
         privacy: 'src/privacy.html',
         cookies: 'src/cookies.html',
         'data-protection': 'src/data-protection.html'

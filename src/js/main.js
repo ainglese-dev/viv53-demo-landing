@@ -779,3 +779,62 @@ function toggleService(button) {
                     `;
     }
 }
+
+// Case Study Toggle Functionality
+function toggleCaseStudy(button) {
+    const caseStudyCard = button.closest('.case-study-card');
+    const details = caseStudyCard.querySelector('.case-study-details');
+    const isExpanded = details.classList.contains('expanded');
+    
+    if (isExpanded) {
+        // Collapse
+        details.classList.remove('expanded');
+        button.classList.remove('expanded');
+        button.innerHTML = `
+            Learn More
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;">
+                <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+        `;
+    } else {
+        // Expand
+        details.classList.add('expanded');
+        button.classList.add('expanded');
+        button.innerHTML = `
+            Show Less
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;">
+                <polyline points="18,15 12,9 6,15"></polyline>
+            </svg>
+        `;
+    }
+}
+
+// Case Studies Filtering Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const caseStudyCards = document.querySelectorAll('.case-study-card');
+    
+    if (filterButtons.length > 0 && caseStudyCards.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Filter cards
+                caseStudyCards.forEach(card => {
+                    const categories = card.getAttribute('data-category').split(' ');
+                    
+                    if (filter === 'all' || categories.includes(filter)) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+});
