@@ -303,13 +303,22 @@ contactForm.addEventListener('submit', async (e) => {
     const formSuccess = document.getElementById('form-success');
     
     // Validate required fields
+    const requestType = document.getElementById('request-type').value;
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
     const message = document.getElementById('message').value.trim();
     const captchaValue = document.getElementById('captcha-input').value.trim();
     
-    if (!name || !email || !message || !validateEmail(email)) {
+    if (!requestType || !name || !email || !message || !validateEmail(email)) {
         showNotification('Please fill in all required fields with valid information.', 'error');
+        return;
+    }
+    
+    // Validate phone for consultation requests
+    if (requestType === 'schedule-consultation' && !phone) {
+        showNotification('Phone number is required for consultation requests.', 'error');
+        document.getElementById('phone').focus();
         return;
     }
     
@@ -336,33 +345,50 @@ contactForm.addEventListener('submit', async (e) => {
         // Google Forms Configuration
         const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc2euAdM5pwQPoewLx8ZC9CFMzDbVVDi8TW58IcoOah6YNnxg/formResponse';
         const GOOGLE_FORM_FIELDS = {
-            name: 'entry.1645488632',
-            email: 'entry.881299443', 
-            company: 'entry.2062573081',
-            service: 'entry.697179097',
-            message: 'entry.1555863920'
+            requestType: 'entry.1645488632',
+            name: 'entry.881299443',
+            email: 'entry.2062573081',
+            phone: 'entry.697179097',
+            company: 'entry.1555863920',
+            service: 'entry.1126400290',
+            preferredTime: 'entry.607434421',
+            message: 'entry.1511830966'
         };
         
         // Get all form data
         const company = document.getElementById('company').value.trim();
         const serviceRaw = document.getElementById('service').value;
+        const preferredTime = document.getElementById('preferred-time').value.trim();
         
-        // Map service values to match Google Forms options EXACTLY (case-sensitive!)
+        // Map request type values for Google Forms
+        const requestTypeMap = {
+            'schedule-consultation': 'Schedule a Free Consultation',
+            'ask-question': 'Ask a Question',
+            'request-quote': 'Request a Quote',
+            'technical-support': 'Technical Support Issue'
+        };
+        
+        // Map service values to match Google Forms options
         const serviceMap = {
             'cloud': 'Cloud Infrastructure',
-            'security': 'Cybersecurity', 
+            'security': 'Cybersecurity Solutions',
             'network': 'Network Management',
-            'support': 'IT support',  // Note: lowercase 's' to match Google Form exactly!
-            'consultation': 'General Consultation'
+            'support': 'Ongoing IT Support',
+            'consultation': 'General IT Consultation'
         };
-        const service = serviceMap[serviceRaw] || serviceRaw || 'General Consultation';
+        
+        const mappedRequestType = requestTypeMap[requestType] || requestType;
+        const mappedService = serviceMap[serviceRaw] || serviceRaw || '';
         
         // Prepare form data for Google Forms using URLSearchParams
         const formData = new URLSearchParams();
+        formData.append(GOOGLE_FORM_FIELDS.requestType, mappedRequestType);
         formData.append(GOOGLE_FORM_FIELDS.name, name);
         formData.append(GOOGLE_FORM_FIELDS.email, email);
-        formData.append(GOOGLE_FORM_FIELDS.company, company || 'Not specified');
-        formData.append(GOOGLE_FORM_FIELDS.service, service || 'General inquiry');
+        formData.append(GOOGLE_FORM_FIELDS.phone, phone || '');
+        formData.append(GOOGLE_FORM_FIELDS.company, company || '');
+        formData.append(GOOGLE_FORM_FIELDS.service, mappedService);
+        formData.append(GOOGLE_FORM_FIELDS.preferredTime, preferredTime || '');
         formData.append(GOOGLE_FORM_FIELDS.message, message);
         
         // Submit to Google Forms
@@ -531,7 +557,7 @@ initScrollAnimations();
 
 // WhatsApp integration helper
 function openWhatsApp() {
-    const phoneNumber = '1234567890'; // Replace with actual phone number
+    const phoneNumber = '12345678900'; // Replace with actual phone number
     const message = encodeURIComponent('Hello! I\'m interested in your IT services. Can we discuss my requirements?');
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappURL, '_blank');
