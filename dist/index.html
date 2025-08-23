@@ -153,8 +153,8 @@
       src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXX&ev=PageView&noscript=1"
     /></noscript>
     -->
-  <script type="module" crossorigin src="/assets/main-n0tb_WfG.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-BKNUccfS.css">
+  <script type="module" crossorigin src="/assets/main-DXfCvD2s.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-C8uoLIa_.css">
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -181,13 +181,10 @@
                     <a href="#services" class="nav-link">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a href="case-studies.html" class="nav-link">Case Studies</a>
+                    <a href="case-studies/" class="nav-link">Case Studies</a>
                 </li>
                 <li class="nav-item">
                     <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Book Call</a>
                 </li>
                 <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
@@ -482,10 +479,10 @@
             </div>
             <div class="contact-content animate-on-scroll">
                 <div class="contact-form-container">
-                    <form class="contact-form" id="contact-form">
+                    <form class="contact-form" id="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSc2euAdM5pwQPoewLx8ZC9CFMzDbVVDi8TW58IcoOah6YNnxg/formResponse" method="POST" target="hidden-iframe">
                         <div class="form-group">
                             <label for="request-type">I want to... *</label>
-                            <select id="request-type" name="request-type" required>
+                            <select id="request-type" name="entry.1645488632" required>
                                 <option value="">Select your request type</option>
                                 <option value="schedule-consultation">Schedule a Free Consultation</option>
                                 <option value="ask-question">Ask a Question</option>
@@ -495,26 +492,26 @@
                         </div>
                         <div class="form-group">
                             <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="entry.881299443" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Business Email *</label>
                             <div class="input-wrapper">
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="entry.2062573081" required>
                                 <div class="input-feedback" id="email-feedback"></div>
                             </div>
                         </div>
                         <div class="form-group" id="phone-group" style="display: none;">
                             <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone">
+                            <input type="tel" id="phone" name="entry.697179097">
                         </div>
                         <div class="form-group">
                             <label for="company">Company Name</label>
-                            <input type="text" id="company" name="company">
+                            <input type="text" id="company" name="entry.1555863920">
                         </div>
                         <div class="form-group">
                             <label for="service">Primary Service Interest</label>
-                            <select id="service" name="service">
+                            <select id="service" name="entry.1126400290">
                                 <option value="">Select a service</option>
                                 <option value="cloud">Cloud Infrastructure</option>
                                 <option value="security">Cybersecurity Solutions</option>
@@ -525,11 +522,11 @@
                         </div>
                         <div class="form-group" id="preferred-time-group" style="display: none;">
                             <label for="preferred-time">Preferred Day & Time for Call</label>
-                            <textarea id="preferred-time" name="preferred-time" rows="2" placeholder="e.g., Weekdays 9am-5pm, or specific date/time"></textarea>
+                            <textarea id="preferred-time" name="entry.607434421" rows="2" placeholder="e.g., Weekdays 9am-5pm, or specific date/time"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="message">Message / Details *</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your IT needs, questions, or challenges..." required></textarea>
+                            <textarea id="message" name="entry.1511830966" rows="5" placeholder="Tell us about your IT needs, questions, or challenges..." required></textarea>
                         </div>
                         <div class="form-group captcha-group">
                             <label for="captcha-input">Verification *</label>
@@ -542,7 +539,8 @@
                                     </svg>
                                 </button>
                             </div>
-                            <input type="text" id="captcha-input" name="captcha" placeholder="Enter the text above" autocomplete="off" required>
+                            <input type="text" id="captcha-input" class="captcha-input" name="captcha" placeholder="Enter the text above" autocomplete="off" required>
+                            <div class="captcha-feedback" id="captcha-feedback"></div>
                         </div>
                         <button type="submit" class="btn btn-primary" id="submit-btn">
                             <span class="btn-text">Send Request</span>
@@ -597,7 +595,21 @@
                             <p><strong>No obligation.</strong> This consultation is completely free with no strings attached.</p>
                         </div>
                     </div>
+                    <div class="contact-info-default" id="default-info">
                         <h3>Contact Information</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 12A10 10 0 1 1 12 2a10 10 0 0 1 10 10Z"></path>
+                                    <path d="M9 9a3 3 0 0 1 6 0v5l-6 0V9Z"></path>
+                                    <path d="M9 14v1a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-1"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Phone</strong>
+                                <p><a href="tel:+12345678900" style="color: inherit; text-decoration: none;">+1 (234) 567-8900</a></p>
+                            </div>
+                        </div>
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -638,7 +650,7 @@
                             </div>
                         </div>
                         <div class="whatsapp-cta">
-                            <a href="https://wa.me/1234567890" class="btn btn-whatsapp" target="_blank">
+                            <a href="https://wa.me/12345678900" class="btn btn-whatsapp" target="_blank">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.63z"/>
                                 </svg>
@@ -648,10 +660,14 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>
     </section>
     </main>
 
+    <!-- Hidden iframe for Google Forms submission -->
+    <iframe name="hidden-iframe" style="display:none;"></iframe>
+    
     <!-- Tooltip -->
     <div class="tooltip" id="tooltip" role="tooltip"></div>
 
@@ -714,7 +730,7 @@
 
     <!-- Floating WhatsApp Button -->
     <div class="floating-whatsapp" id="floating-whatsapp">
-        <a href="https://wa.me/1234567890" target="_blank" aria-label="Chat on WhatsApp" class="whatsapp-float-btn">
+        <a href="https://wa.me/12345678900" target="_blank" aria-label="Chat on WhatsApp" class="whatsapp-float-btn">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.63z"/>
             </svg>
