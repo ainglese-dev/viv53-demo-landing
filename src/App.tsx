@@ -1,15 +1,28 @@
 import { Routes, Route } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 
+// Layout
+import RootLayout from './components/layout/RootLayout'
+
+// Pages
+import Home from './pages/Home'
+import CaseStudies from './pages/CaseStudies'
+import Privacy from './pages/Privacy'
+import Cookies from './pages/Cookies'
+import DataProtection from './pages/DataProtection'
+
 function App() {
   return (
     <HelmetProvider>
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background text-foreground">
         <Routes>
-          <Route path="/" element={<div className="text-center p-8 text-foreground">
-            <h1 className="text-4xl font-bold mb-4">VIV53 IT Services</h1>
-            <p className="text-xl">React + TypeScript Migration - Phase 1 Complete!</p>
-          </div>} />
+          <Route element={<RootLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/cookies" element={<Cookies />} />
+            <Route path="/data-protection" element={<DataProtection />} />
+          </Route>
         </Routes>
       </div>
     </HelmetProvider>
