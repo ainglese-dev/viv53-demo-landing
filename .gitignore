@@ -43,3 +43,19 @@ yarn-error.log*
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# Documentation & Example Files (not needed in deployment)
+*.md
+!README.md
+*.example
+PRD.md
+CLAUDE.md
+PHASE-*.md
+DEPLOYMENT.md
+
+# Test files
+tests/
+playwright.config.ts
+*.spec.ts
+*.test.ts
+*.test.tsx
