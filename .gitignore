@@ -47,6 +47,7 @@ yarn-error.log*
 # Documentation & Example Files (not needed in deployment)
 *.md
 !README.md
+!README-DEPLOYMENT.md
 *.example
 PRD.md
 CLAUDE.md
