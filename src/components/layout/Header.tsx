@@ -3,6 +3,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import ThemeToggle from '@/components/features/ThemeToggle'
+import LanguageSwitcher from '@/components/features/LanguageSwitcher'
+
+// Feature flag for Spanish language support
+const ENABLE_SPANISH = false
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -85,6 +89,11 @@ export default function Header() {
             <li>
               <ThemeToggle />
             </li>
+            {ENABLE_SPANISH && (
+              <li>
+                <LanguageSwitcher />
+              </li>
+            )}
           </ul>
 
           {/* Mobile Hamburger */}
@@ -132,6 +141,11 @@ export default function Header() {
             <li className="mt-4">
               <ThemeToggle />
             </li>
+            {ENABLE_SPANISH && (
+              <li className="mt-4">
+                <LanguageSwitcher />
+              </li>
+            )}
           </ul>
         </div>
       </nav>
