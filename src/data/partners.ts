@@ -7,42 +7,42 @@ export interface Partner {
 export const partners: Partner[] = [
   {
     name: 'Cisco',
-    logo: 'https://logo.clearbit.com/cisco.com',
+    logo: 'https://cdn.simpleicons.org/cisco/1BA0D7',
     description: 'Leading networking and cybersecurity solutions for enterprise infrastructure',
   },
   {
     name: 'VMware',
-    logo: 'https://logo.clearbit.com/vmware.com',
+    logo: 'https://cdn.simpleicons.org/vmware/607078',
     description: 'Virtualization and cloud computing infrastructure solutions',
   },
   {
     name: 'Red Hat',
-    logo: 'https://logo.clearbit.com/redhat.com',
+    logo: 'https://cdn.simpleicons.org/redhat/EE0000',
     description: 'Open source enterprise software and cloud solutions',
   },
   {
     name: 'Microsoft',
-    logo: 'https://logo.clearbit.com/microsoft.com',
+    logo: 'https://cdn.simpleicons.org/microsoft/5E5E5E',
     description: 'Cloud services, productivity software, and enterprise solutions',
   },
   {
     name: 'Ubuntu',
-    logo: 'https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png',
+    logo: 'https://cdn.simpleicons.org/ubuntu/E95420',
     description: 'Leading Linux distribution for servers and development',
   },
   {
     name: 'AWS',
-    logo: 'https://logo.clearbit.com/aws.amazon.com',
+    logo: 'https://cdn.simpleicons.org/amazonaws/FF9900',
     description: 'Amazon Web Services - comprehensive cloud computing platform',
   },
   {
     name: 'Microsoft Azure',
-    logo: 'https://logo.clearbit.com/azure.microsoft.com',
+    logo: 'https://cdn.simpleicons.org/microsoftazure/0078D4',
     description: "Microsoft's cloud platform for building and deploying applications",
   },
   {
     name: 'Google Cloud',
-    logo: 'https://logo.clearbit.com/cloud.google.com',
+    logo: 'https://cdn.simpleicons.org/googlecloud/4285F4',
     description: "Google's cloud computing services and infrastructure",
   },
 ]
