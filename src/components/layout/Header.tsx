@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import ThemeToggle from '@/components/features/ThemeToggle'
 import LanguageSwitcher from '@/components/features/LanguageSwitcher'
 
 // Feature flag for Spanish language support
@@ -86,9 +85,6 @@ export default function Header() {
                 Case Studies
               </Link>
             </li>
-            <li>
-              <ThemeToggle />
-            </li>
             {ENABLE_SPANISH && (
               <li>
                 <LanguageSwitcher />
@@ -137,9 +133,6 @@ export default function Header() {
               >
                 Case Studies
               </Link>
-            </li>
-            <li className="mt-4">
-              <ThemeToggle />
             </li>
             {ENABLE_SPANISH && (
               <li className="mt-4">
