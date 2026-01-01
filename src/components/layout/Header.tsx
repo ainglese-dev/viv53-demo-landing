@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import ThemeToggle from '@/components/features/ThemeToggle'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -81,6 +82,9 @@ export default function Header() {
                 Case Studies
               </Link>
             </li>
+            <li>
+              <ThemeToggle />
+            </li>
           </ul>
 
           {/* Mobile Hamburger */}
@@ -124,6 +128,9 @@ export default function Header() {
               >
                 Case Studies
               </Link>
+            </li>
+            <li className="mt-4">
+              <ThemeToggle />
             </li>
           </ul>
         </div>
