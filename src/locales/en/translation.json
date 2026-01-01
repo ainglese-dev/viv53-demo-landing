@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "caseStudies": "Case Studies"
+  },
+  "hero": {
+    "title": "Professional IT Solutions",
+    "subtitle": "for Your Business",
+    "description": "Expert on-premises and cloud services across multiple vendors. Empowering SMB companies with reliable IT infrastructure and support.",
+    "ctaGetStarted": "Get Started",
+    "ctaOurServices": "Our Services"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive IT solutions tailored to your business needs",
+    "cloud": {
+      "title": "Cloud Infrastructure",
+      "description": "Scalable cloud solutions across AWS, Azure, and Google Cloud. Migration, setup, and ongoing management for optimal performance.",
+      "detailsTitle": "Services include:",
+      "items": [
+        "Cloud migration planning and execution",
+        "Multi-cloud architecture design",
+        "Cost optimization and monitoring",
+        "Disaster recovery solutions"
+      ]
+    },
+    "security": {
+      "title": "Cybersecurity",
+      "description": "Comprehensive security solutions including threat assessment, firewall management, and employee training to protect your business.",
+      "detailsTitle": "Security services:",
+      "items": [
+        "Vulnerability assessments and penetration testing",
+        "Firewall configuration and management",
+        "Employee security training programs",
+        "Incident response and forensics"
+      ]
+    },
+    "network": {
+      "title": "Network Management",
+      "description": "Professional network design, implementation, and maintenance. Ensuring reliable connectivity and optimal performance for your operations.",
+      "detailsTitle": "Network solutions:",
+      "items": [
+        "Network infrastructure design and setup",
+        "Wi-Fi optimization and troubleshooting",
+        "VPN and remote access solutions",
+        "Performance monitoring and optimization"
+      ]
+    },
+    "support": {
+      "title": "IT Support",
+      "description": "24/7 technical support and maintenance services. Remote and on-site assistance to keep your systems running smoothly.",
+      "detailsTitle": "Support services:",
+      "items": [
+        "24/7 helpdesk and technical support",
+        "Remote troubleshooting and maintenance",
+        "Hardware replacement and upgrades",
+        "Software installation and updates"
+      ]
+    }
+  },
+  "about": {
+    "title": "About VIV53",
+    "description": "We are a Miami-based IT services company specializing in comprehensive technology solutions for small and medium-sized businesses. With expertise across multiple cloud platforms and on-premises infrastructure, we help companies modernize their IT operations and achieve their business goals.",
+    "features": [
+      "Expert team with multi-vendor certifications",
+      "24/7 support and monitoring",
+      "Proven track record with SMB clients",
+      "Customized solutions for your needs"
+    ]
+  },
+  "partners": {
+    "title": "Technology Partners",
+    "subtitle": "We work with industry-leading platforms"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Ready to transform your IT infrastructure? Let's talk.",
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "addressLine": "Miami, FL"
+    },
+    "form": {
+      "title": "Send us a message",
+      "name": "Full Name",
+      "namePlaceholder": "John Doe",
+      "email": "Email Address",
+      "emailPlaceholder": "john@company.com",
+      "service": "Service Interested In",
+      "servicePlaceholder": "Select a service",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your IT needs...",
+      "captcha": "Security Check",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank you! We'll get back to you soon.",
+      "error": "Failed to send message. Please try again.",
+      "captchaError": "Please complete the security check."
+    }
+  },
+  "footer": {
+    "description": "Professional IT solutions for modern businesses.",
+    "services": "Services",
+    "legal": "Legal",
+    "social": "Connect",
+    "copyright": "© 2025 VIV53 IT Services. All rights reserved.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy",
+      "dataProtection": "Data Protection"
+    }
+  },
+  "caseStudies": {
+    "title": "Success Stories",
+    "subtitle": "Real results for real businesses",
+    "cta": {
+      "title": "Ready to Be Our Next Success Story?",
+      "description": "Let's discuss how we can help transform your IT infrastructure.",
+      "button": "Get Started"
+    }
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "backToHome": "Back to Home",
+    "loading": "Loading...",
+    "yes": "Yes",
+    "no": "No"
+  }
+}

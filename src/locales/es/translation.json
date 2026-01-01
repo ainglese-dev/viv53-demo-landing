@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "caseStudies": "Casos de Éxito"
+  },
+  "hero": {
+    "title": "Soluciones IT Profesionales",
+    "subtitle": "para Su Empresa",
+    "description": "Servicios expertos en la nube y locales a través de múltiples proveedores. Empoderando a empresas SMB con infraestructura IT confiable y soporte.",
+    "ctaGetStarted": "Comenzar",
+    "ctaOurServices": "Nuestros Servicios"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones IT integrales adaptadas a las necesidades de su negocio",
+    "cloud": {
+      "title": "Infraestructura en la Nube",
+      "description": "Soluciones escalables en AWS, Azure y Google Cloud. Migración, configuración y gestión continua para un rendimiento óptimo.",
+      "detailsTitle": "Los servicios incluyen:",
+      "items": [
+        "Planificación y ejecución de migración a la nube",
+        "Diseño de arquitectura multi-nube",
+        "Optimización y monitoreo de costos",
+        "Soluciones de recuperación ante desastres"
+      ]
+    },
+    "security": {
+      "title": "Ciberseguridad",
+      "description": "Soluciones de seguridad integrales que incluyen evaluación de amenazas, gestión de firewall y capacitación de empleados para proteger su negocio.",
+      "detailsTitle": "Servicios de seguridad:",
+      "items": [
+        "Evaluaciones de vulnerabilidad y pruebas de penetración",
+        "Configuración y gestión de firewall",
+        "Programas de capacitación en seguridad para empleados",
+        "Respuesta a incidentes y análisis forense"
+      ]
+    },
+    "network": {
+      "title": "Gestión de Redes",
+      "description": "Diseño, implementación y mantenimiento profesional de redes. Asegurando conectividad confiable y rendimiento óptimo para sus operaciones.",
+      "detailsTitle": "Soluciones de red:",
+      "items": [
+        "Diseño y configuración de infraestructura de red",
+        "Optimización y solución de problemas de Wi-Fi",
+        "Soluciones VPN y acceso remoto",
+        "Monitoreo y optimización del rendimiento"
+      ]
+    },
+    "support": {
+      "title": "Soporte IT",
+      "description": "Servicios de soporte técnico y mantenimiento 24/7. Asistencia remota y en sitio para mantener sus sistemas funcionando sin problemas.",
+      "detailsTitle": "Servicios de soporte:",
+      "items": [
+        "Mesa de ayuda y soporte técnico 24/7",
+        "Solución de problemas y mantenimiento remoto",
+        "Reemplazo y actualizaciones de hardware",
+        "Instalación y actualizaciones de software"
+      ]
+    }
+  },
+  "about": {
+    "title": "Acerca de VIV53",
+    "description": "Somos una empresa de servicios IT con sede en Miami, especializada en soluciones tecnológicas integrales para pequeñas y medianas empresas. Con experiencia en múltiples plataformas en la nube e infraestructura local, ayudamos a las empresas a modernizar sus operaciones IT y alcanzar sus objetivos comerciales.",
+    "features": [
+      "Equipo experto con certificaciones multi-proveedor",
+      "Soporte y monitoreo 24/7",
+      "Trayectoria comprobada con clientes SMB",
+      "Soluciones personalizadas para sus necesidades"
+    ]
+  },
+  "partners": {
+    "title": "Socios Tecnológicos",
+    "subtitle": "Trabajamos con plataformas líderes en la industria"
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "subtitle": "¿Listo para transformar su infraestructura IT? Hablemos.",
+    "info": {
+      "email": "Correo",
+      "phone": "Teléfono",
+      "address": "Dirección",
+      "addressLine": "Miami, FL"
+    },
+    "form": {
+      "title": "Envíenos un mensaje",
+      "name": "Nombre Completo",
+      "namePlaceholder": "Juan Pérez",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "juan@empresa.com",
+      "service": "Servicio de Interés",
+      "servicePlaceholder": "Seleccione un servicio",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntenos sobre sus necesidades IT...",
+      "captcha": "Verificación de Seguridad",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Gracias! Nos pondremos en contacto pronto.",
+      "error": "Error al enviar el mensaje. Por favor, inténtelo de nuevo.",
+      "captchaError": "Por favor, complete la verificación de seguridad."
+    }
+  },
+  "footer": {
+    "description": "Soluciones IT profesionales para empresas modernas.",
+    "services": "Servicios",
+    "legal": "Legal",
+    "social": "Conectar",
+    "copyright": "© 2025 VIV53 IT Services. Todos los derechos reservados.",
+    "links": {
+      "privacy": "Política de Privacidad",
+      "cookies": "Política de Cookies",
+      "dataProtection": "Protección de Datos"
+    }
+  },
+  "caseStudies": {
+    "title": "Historias de Éxito",
+    "subtitle": "Resultados reales para empresas reales",
+    "cta": {
+      "title": "¿Listo para Ser Nuestra Próxima Historia de Éxito?",
+      "description": "Hablemos sobre cómo podemos ayudar a transformar su infraestructura IT.",
+      "button": "Comenzar"
+    }
+  },
+  "common": {
+    "learnMore": "Saber Más",
+    "readMore": "Leer Más",
+    "backToHome": "Volver al Inicio",
+    "loading": "Cargando...",
+    "yes": "Sí",
+    "no": "No"
+  }
+}
