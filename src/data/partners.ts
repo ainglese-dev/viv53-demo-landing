@@ -1,7 +1,7 @@
-// Import local SVG logos
-import awsLogo from '@/assets/images/partners/aws.svg'
-import azureLogo from '@/assets/images/partners/azure.svg'
-import microsoftLogo from '@/assets/images/partners/microsoft.svg'
+// Import local PNG logos
+import awsLogo from '@/assets/images/partners/aws.png'
+import azureLogo from '@/assets/images/partners/azure.png'
+import microsoftLogo from '@/assets/images/partners/microsoft.png'
 
 export interface Partner {
   name: string
