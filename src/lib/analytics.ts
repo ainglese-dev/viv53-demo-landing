@@ -2,8 +2,9 @@ import ReactGA from 'react-ga4'
 
 // Analytics IDs from environment variables (with placeholders)
 const GA4_MEASUREMENT_ID = import.meta.env.VITE_GA4_ID || 'G-XXXXXXXXXX'
-const GTM_CONTAINER_ID = import.meta.env.VITE_GTM_ID || 'GTM-XXXXXXX'
-const META_PIXEL_ID = import.meta.env.VITE_META_PIXEL_ID || 'XXXXXXXXXXXXXX'
+// Reserved for future Phase 2 analytics activation
+// const GTM_CONTAINER_ID = import.meta.env.VITE_GTM_ID || 'GTM-XXXXXXX'
+// const META_PIXEL_ID = import.meta.env.VITE_META_PIXEL_ID || 'XXXXXXXXXXXXXX'
 
 // Check if analytics is allowed based on cookie consent
 export const isAnalyticsAllowed = (): boolean => {

@@ -16,12 +16,9 @@ export default function Header() {
 
   // Handle scroll behavior
   useEffect(() => {
-    let lastScroll = 0
-
     const handleScroll = () => {
       const currentScroll = window.scrollY
       setIsScrolled(currentScroll > 50)
-      lastScroll = currentScroll
     }
 
     window.addEventListener('scroll', handleScroll)
