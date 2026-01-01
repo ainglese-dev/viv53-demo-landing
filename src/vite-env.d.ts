@@ -7,6 +7,9 @@ interface ImportMetaEnv {
   readonly VITE_CONTACT_FORM_URL?: string
   readonly VITE_BOOKING_FORM_URL?: string
   readonly VITE_WHATSAPP_NUMBER?: string
+  readonly VITE_CONTACT_EMAIL?: string
+  readonly VITE_CONTACT_PHONE?: string
+  readonly VITE_CONTACT_PHONE_DISPLAY?: string
   readonly VITE_ENABLE_SPANISH?: string
   readonly VITE_APP_URL?: string
   readonly VITE_APP_NAME?: string

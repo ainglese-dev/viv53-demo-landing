@@ -67,7 +67,8 @@ export default function ContactForm() {
       formData.append('message', data.message)
 
       // Replace with your actual form submission endpoint
-      const response = await fetch('https://formsubmit.co/ajax/info@viv53.com', {
+      const formUrl = import.meta.env.VITE_CONTACT_FORM_URL || 'https://formsubmit.co/ajax/info@viv53.com'
+      const response = await fetch(formUrl, {
         method: 'POST',
         body: formData,
         headers: {

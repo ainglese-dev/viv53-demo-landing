@@ -23,10 +23,10 @@ export default function Contact() {
                 <div>
                   <h3 className="text-lg font-semibold text-viv53-text-primary mb-1">Email</h3>
                   <a
-                    href="mailto:info@viv53.com"
+                    href={`mailto:${import.meta.env.VITE_CONTACT_EMAIL || 'info@viv53.com'}`}
                     className="text-viv53-text-secondary hover:text-viv53-gold transition-colors"
                   >
-                    info@viv53.com
+                    {import.meta.env.VITE_CONTACT_EMAIL || 'info@viv53.com'}
                   </a>
                 </div>
               </div>
@@ -36,10 +36,10 @@ export default function Contact() {
                 <div>
                   <h3 className="text-lg font-semibold text-viv53-text-primary mb-1">Phone</h3>
                   <a
-                    href="tel:+12345678900"
+                    href={`tel:${import.meta.env.VITE_CONTACT_PHONE || '+12345678900'}`}
                     className="text-viv53-text-secondary hover:text-viv53-gold transition-colors"
                   >
-                    +1 (234) 567-8900
+                    {import.meta.env.VITE_CONTACT_PHONE_DISPLAY || '+1 (234) 567-8900'}
                   </a>
                 </div>
               </div>

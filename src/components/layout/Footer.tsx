@@ -22,7 +22,7 @@ export default function Footer() {
     { name: 'LinkedIn', href: 'https://linkedin.com/in/ainglese', icon: Linkedin },
     { name: 'Instagram', href: 'https://instagram.com/viv53_it', icon: Instagram },
     { name: 'GitHub', href: 'https://github.com/viv53-it', icon: Github },
-    { name: 'Email', href: 'mailto:info@viv53.com', icon: Mail },
+    { name: 'Email', href: `mailto:${import.meta.env.VITE_CONTACT_EMAIL || 'info@viv53.com'}`, icon: Mail },
   ]
 
   return (
