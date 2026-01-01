@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/select'
 import SimpleCaptcha from './SimpleCaptcha'
 import { Loader2, Send } from 'lucide-react'
+import { trackFormSubmit } from '@/lib/analytics'
 
 const services = [
   { value: 'cloud', label: 'Cloud Infrastructure' },
@@ -76,6 +77,7 @@ export default function ContactForm() {
 
       if (response.ok) {
         setSubmitStatus('success')
+        trackFormSubmit('Contact Form')
         reset()
         // Show success message for 5 seconds
         setTimeout(() => setSubmitStatus('idle'), 5000)

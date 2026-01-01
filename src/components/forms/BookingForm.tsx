@@ -17,6 +17,7 @@ import { DayPicker } from 'react-day-picker'
 import { format } from 'date-fns'
 import SimpleCaptcha from './SimpleCaptcha'
 import { Loader2, Send, Calendar as CalendarIcon } from 'lucide-react'
+import { trackFormSubmit } from '@/lib/analytics'
 
 const services = [
   { value: 'cloud', label: 'Cloud Infrastructure' },
@@ -90,6 +91,7 @@ export default function BookingForm() {
 
       if (response.ok) {
         setSubmitStatus('success')
+        trackFormSubmit('Booking Form')
         reset()
         setTimeout(() => setSubmitStatus('idle'), 5000)
       } else {

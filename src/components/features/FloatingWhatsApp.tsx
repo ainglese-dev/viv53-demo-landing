@@ -1,5 +1,6 @@
 import { MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { trackWhatsAppClick } from '@/lib/analytics'
 
 export default function FloatingWhatsApp() {
   const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '12345678900'
@@ -11,6 +12,7 @@ export default function FloatingWhatsApp() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={trackWhatsAppClick}
       className="fixed bottom-6 right-6 z-40 group"
       aria-label="Chat on WhatsApp"
     >
