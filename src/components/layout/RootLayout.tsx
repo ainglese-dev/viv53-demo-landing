@@ -2,12 +2,14 @@ import { Outlet } from 'react-router-dom'
 import Header from './Header'
 import Footer from './Footer'
 import ScrollToTop from './ScrollToTop'
+import ScrollToTopOnNavigate from './ScrollToTopOnNavigate'
 import FloatingWhatsApp from '../features/FloatingWhatsApp'
 import CookieBanner from '../features/CookieBanner'
 
 export default function RootLayout() {
   return (
     <div className="flex flex-col min-h-screen">
+      <ScrollToTopOnNavigate />
       <Header />
 
       <main className="flex-1">
