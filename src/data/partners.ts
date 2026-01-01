@@ -1,3 +1,8 @@
+// Import local SVG logos
+import awsLogo from '@/assets/images/partners/aws.svg'
+import azureLogo from '@/assets/images/partners/azure.svg'
+import microsoftLogo from '@/assets/images/partners/microsoft.svg'
+
 export interface Partner {
   name: string
   logo: string
@@ -22,7 +27,7 @@ export const partners: Partner[] = [
   },
   {
     name: 'Microsoft',
-    logo: 'https://cdn.simpleicons.org/microsoft/5E5E5E',
+    logo: microsoftLogo,
     description: 'Cloud services, productivity software, and enterprise solutions',
   },
   {
@@ -32,12 +37,12 @@ export const partners: Partner[] = [
   },
   {
     name: 'AWS',
-    logo: 'https://cdn.simpleicons.org/amazonaws/FF9900',
+    logo: awsLogo,
     description: 'Amazon Web Services - comprehensive cloud computing platform',
   },
   {
     name: 'Microsoft Azure',
-    logo: 'https://cdn.simpleicons.org/microsoftazure/0078D4',
+    logo: azureLogo,
     description: "Microsoft's cloud platform for building and deploying applications",
   },
   {
