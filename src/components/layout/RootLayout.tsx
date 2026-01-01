@@ -3,6 +3,7 @@ import Header from './Header'
 import Footer from './Footer'
 import ScrollToTop from './ScrollToTop'
 import FloatingWhatsApp from '../features/FloatingWhatsApp'
+import CookieBanner from '../features/CookieBanner'
 
 export default function RootLayout() {
   return (
@@ -16,6 +17,7 @@ export default function RootLayout() {
       <Footer />
       <ScrollToTop />
       <FloatingWhatsApp />
+      <CookieBanner />
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin } from 'lucide-react'
+import ContactForm from '@/components/forms/ContactForm'
 
 export default function Contact() {
   return (
@@ -70,16 +71,9 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Contact Form Placeholder */}
-          <div className="flex items-center justify-center">
-            <div className="text-center p-8 bg-viv53-primary-bg border border-viv53-border rounded-lg w-full">
-              <p className="text-viv53-text-secondary mb-4">
-                Contact form with React Hook Form + Zod validation will be added in Phase 4
-              </p>
-              <p className="text-sm text-viv53-text-muted">
-                Form will include: name, email, service selection, message, and CAPTCHA validation
-              </p>
-            </div>
+          {/* Contact Form */}
+          <div className="p-8 bg-viv53-primary-bg border border-viv53-border rounded-lg">
+            <ContactForm />
           </div>
         </div>
       </div>
