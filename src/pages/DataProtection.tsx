@@ -41,7 +41,7 @@ export default function DataProtection() {
               </h2>
               <div className="bg-viv53-primary-bg-secondary border border-viv53-border rounded-lg p-6 space-y-2">
                 <p><strong className="text-viv53-gold">Data Controller:</strong> VIV53 IT Services</p>
-                <p><strong className="text-viv53-gold">Address:</strong> 123 Tech Plaza, Suite 100, Miami, FL 33101</p>
+                <p><strong className="text-viv53-gold">Address:</strong> 8811 NW 78th St, Tamarac, FL 33321</p>
                 <p>
                   <strong className="text-viv53-gold">Email:</strong>{' '}
                   <a href="mailto:dpo@viv53.com" className="text-viv53-gold hover:text-viv53-gold-hover underline">
@@ -309,7 +309,7 @@ export default function DataProtection() {
                   Email: <a href="mailto:dpo@viv53.com" className="text-viv53-gold hover:text-viv53-gold-hover underline">dpo@viv53.com</a>
                 </p>
                 <p>Phone: +1-234-567-8900</p>
-                <p>Address: 123 Tech Plaza, Suite 100, Miami, FL 33101</p>
+                <p>Address: 8811 NW 78th St, Tamarac, FL 33321</p>
                 <p className="text-viv53-gold font-semibold pt-2">Response Time: We aim to respond within 30 days</p>
               </div>
             </section>

@@ -49,7 +49,8 @@ export default function Contact() {
                 <div>
                   <h3 className="text-lg font-semibold text-viv53-text-primary mb-1">Location</h3>
                   <p className="text-viv53-text-secondary">
-                    Miami, FL<br />
+                    {import.meta.env.VITE_COMPANY_ADDRESS_STREET || '8811 NW 78th St'}<br />
+                    {import.meta.env.VITE_COMPANY_ADDRESS_CITY || 'Tamarac'}, {import.meta.env.VITE_COMPANY_ADDRESS_STATE || 'FL'} {import.meta.env.VITE_COMPANY_ADDRESS_ZIP || '33321'}<br />
                     United States
                   </p>
                 </div>
@@ -59,7 +60,7 @@ export default function Contact() {
             {/* Google Maps Embed */}
             <div className="rounded-lg overflow-hidden border border-viv53-border h-[300px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.994355834967!2d-80.19362!3d25.7616798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a20ec8c95f%3A0xdd0f7a8850102273!2sMiami%2C%20FL!5e0!3m2!1sen!2sus!4v1234567890"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=8811+NW+78th+St,Tamarac,FL+33321"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

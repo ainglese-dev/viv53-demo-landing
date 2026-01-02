@@ -172,7 +172,7 @@ export default function Privacy() {
                   Email: <a href="mailto:privacy@viv53.com" className="text-viv53-gold hover:text-viv53-gold-hover underline">privacy@viv53.com</a>
                 </p>
                 <p>Phone: +1-234-567-8900</p>
-                <p>Address: 123 Tech Plaza, Suite 100, Miami, FL 33101</p>
+                <p>Address: 8811 NW 78th St, Tamarac, FL 33321</p>
               </div>
             </section>
           </div>
