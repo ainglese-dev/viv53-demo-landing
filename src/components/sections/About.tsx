@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react'
+import teamImage from '@/assets/images/viv53_team.png'
 
 export default function About() {
   const features = [
@@ -77,10 +78,14 @@ export default function About() {
             </div>
           </div>
 
-          {/* Image Placeholder */}
+          {/* Team Image */}
           <div className="lg:order-last">
-            <div className="aspect-[4/3] bg-viv53-primary-bg border-2 border-viv53-gold rounded-lg flex items-center justify-center">
-              <span className="text-viv53-gold text-lg">Professional Team Image</span>
+            <div className="aspect-[4/3] overflow-hidden rounded-lg border-2 border-viv53-gold shadow-lg">
+              <img
+                src={teamImage}
+                alt="VIV53 Professional Network Engineering Team"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
             </div>
           </div>
         </div>
