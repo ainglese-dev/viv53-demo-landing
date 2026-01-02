@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import Hero from '@/components/sections/Hero'
 import Services from '@/components/sections/Services'
 import About from '@/components/sections/About'
+import Industries from '@/components/sections/Industries'
 import TechnologyPartners from '@/components/sections/TechnologyPartners'
 import Booking from '@/components/sections/Booking'
 import Contact from '@/components/sections/Contact'
@@ -12,13 +13,14 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>VIV53 IT Services - Professional IT Solutions for SMB Companies</title>
-        <meta name="description" content="Expert on-premises and cloud services across multiple vendors. Empowering SMB companies with reliable IT infrastructure and support." />
+        <title>VIV53 IT Services - Enterprise Network Engineering with Automation & AI</title>
+        <meta name="description" content="High-level Network Consulting Engineers delivering zero-downtime infrastructure with multivendor automation and AI-enhanced operations for SMB and mid-market companies." />
       </Helmet>
 
       <Hero />
       <Services />
       <About />
+      <Industries />
       <TechnologyPartners />
       <Booking />
       <Contact />

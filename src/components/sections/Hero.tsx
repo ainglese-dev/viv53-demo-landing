@@ -53,14 +53,15 @@ export default function Hero() {
       {/* Content */}
       <div className="container mx-auto px-4 max-w-viv53 relative z-20 text-center py-32">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-viv53-text-primary mb-6 leading-tight">
-          Professional IT Solutions
+          Enterprise-Grade Network Engineering
           <br />
-          <span className="text-viv53-gold">for Your Business</span>
+          <span className="text-viv53-gold">Powered by Automation & AI</span>
         </h1>
 
         <p className="text-xl md:text-2xl text-viv53-text-secondary mb-12 max-w-3xl mx-auto">
-          Expert on-premises and cloud services across multiple vendors. Empowering SMB companies
-          with reliable IT infrastructure and support.
+          High-level Network Consulting Engineers delivering zero-downtime infrastructure
+          with multivendor automation and AI-enhanced operations. Accelerating growth for
+          SMB and mid-market companies.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

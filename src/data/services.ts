@@ -1,4 +1,4 @@
-import { Cloud, Shield, Network, Settings } from 'lucide-react'
+import { Cloud, Shield, Network, Settings, Bot } from 'lucide-react'
 
 export interface Service {
   id: string
@@ -16,13 +16,14 @@ export const services: Service[] = [
     id: 'cloud',
     title: 'Cloud Infrastructure',
     icon: Cloud,
-    description: 'Scalable cloud solutions across AWS, Azure, and Google Cloud. Migration, setup, and ongoing management for optimal performance.',
+    description: 'Scalable cloud solutions across AWS, Azure, and Google Cloud. Migration, setup, automated provisioning, and ongoing management for optimal performance.',
     details: {
       title: 'Services include:',
       items: [
         'Cloud migration planning and execution',
         'Multi-cloud architecture design',
-        'Cost optimization and monitoring',
+        'Automated provisioning and scaling',
+        'Cost optimization and AI-driven monitoring',
         'Disaster recovery solutions',
       ],
     },
@@ -31,12 +32,13 @@ export const services: Service[] = [
     id: 'security',
     title: 'Cybersecurity',
     icon: Shield,
-    description: 'Comprehensive security solutions including threat assessment, firewall management, and employee training to protect your business.',
+    description: 'Comprehensive security solutions with AI-powered threat intelligence, automated response, and proactive defense to protect your business from evolving threats.',
     details: {
       title: 'Security services:',
       items: [
+        'AI-powered threat detection and intelligence',
         'Vulnerability assessments and penetration testing',
-        'Firewall configuration and management',
+        'Automated firewall configuration and management',
         'Employee security training programs',
         'Incident response and forensics',
       ],
@@ -46,14 +48,15 @@ export const services: Service[] = [
     id: 'network',
     title: 'Network Management',
     icon: Network,
-    description: 'Professional network design, implementation, and maintenance. Ensuring reliable connectivity and optimal performance for your operations.',
+    description: 'Professional network design, implementation, and automated Day-2 operations. Ensuring reliable connectivity and optimal performance with proactive monitoring.',
     details: {
       title: 'Network solutions:',
       items: [
         'Network infrastructure design and setup',
+        'Automated Day-2 operations and optimization',
         'Wi-Fi optimization and troubleshooting',
         'VPN and remote access solutions',
-        'Performance monitoring and optimization',
+        'AI-enhanced performance monitoring',
       ],
     },
   },
@@ -69,6 +72,21 @@ export const services: Service[] = [
         'Remote troubleshooting and maintenance',
         'Hardware replacement and upgrades',
         'Software installation and updates',
+      ],
+    },
+  },
+  {
+    id: 'automation',
+    title: 'Automation & AI Integration',
+    icon: Bot,
+    description: 'Transform Day-2 operations with intelligent automation. Remove human error, accelerate workflows, and enable AI-enhanced monitoring across multivendor environments.',
+    details: {
+      title: 'Automation capabilities:',
+      items: [
+        'Multivendor workflow automation and orchestration',
+        'AI-powered network monitoring and threat detection',
+        'Infrastructure-as-Code implementation and management',
+        'Proactive anomaly detection and remediation',
       ],
     },
   },

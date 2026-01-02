@@ -46,6 +46,7 @@ export default function Header() {
     { label: 'Home', section: 'home' },
     { label: 'Services', section: 'services' },
     { label: 'About', section: 'about' },
+    { label: 'Industries', section: 'industries' },
     { label: 'Contact', section: 'contact' },
   ]
 

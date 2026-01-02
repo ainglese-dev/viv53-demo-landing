@@ -21,10 +21,10 @@ export default function CaseStudies() {
   return (
     <>
       <Helmet>
-        <title>Success Stories - VIV53 IT Services Case Studies</title>
+        <title>Zero-Downtime Success Stories - VIV53 Case Studies</title>
         <meta
           name="description"
-          content="Discover how VIV53 IT Services has helped SMB companies transform their technology infrastructure. Real client success stories and project results."
+          content="Discover how VIV53 delivers zero-downtime infrastructure with automation and AI for Healthcare, Banking, Manufacturing, and Cybersecurity firms. Real results, measurable ROI."
         />
       </Helmet>
 
@@ -32,11 +32,11 @@ export default function CaseStudies() {
       <section className="relative py-20 bg-viv53-primary-bg">
         <div className="container mx-auto px-4 max-w-viv53 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-viv53-text-primary mb-6">
-            Success Stories
+            Zero-Downtime Success Stories
           </h1>
           <p className="text-xl text-viv53-text-secondary max-w-3xl mx-auto">
-            Real results from our SMB clients. Discover how we've helped businesses like yours
-            transform their IT infrastructure and achieve their goals.
+            Real results from critical industries where downtime isn't an option. Discover how our
+            automation and AI-enhanced infrastructure delivers measurable ROI in weeks, not months.
           </p>
         </div>
       </section>
@@ -44,9 +44,13 @@ export default function CaseStudies() {
       {/* Case Studies Grid */}
       <section className="py-16 bg-viv53-primary-bg-secondary">
         <div className="container mx-auto px-4 max-w-viv53">
-          <h2 className="text-4xl font-bold text-center text-viv53-text-primary mb-12">
-            Our Client Success Stories
+          <h2 className="text-4xl font-bold text-center text-viv53-text-primary mb-4">
+            Proven Results Across Critical Industries
           </h2>
+          <p className="text-center text-viv53-text-secondary mb-12 max-w-2xl mx-auto">
+            From Healthcare to Banking to Manufacturing—see how our Enablement Partner approach
+            delivers operational velocity and confidence to scale.
+          </p>
 
           <div className="space-y-12">
             {caseStudies.map((caseStudy) => (
@@ -60,11 +64,11 @@ export default function CaseStudies() {
       <section className="py-20 bg-viv53-primary-bg text-center">
         <div className="container mx-auto px-4 max-w-viv53">
           <h2 className="text-4xl font-bold text-viv53-text-primary mb-4">
-            Ready to Be Our Next Success Story?
+            Ready to Achieve Zero-Downtime Operations?
           </h2>
           <p className="text-xl text-viv53-text-secondary mb-8 max-w-2xl mx-auto">
-            Join these successful SMB companies and transform your IT infrastructure with VIV53's
-            expert solutions.
+            Join these industry leaders and transform your infrastructure with automation, AI, and
+            enterprise-grade reliability. ROI in weeks, not months.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
