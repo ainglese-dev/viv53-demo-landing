@@ -60,7 +60,21 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 z-50">
-            <span className="text-2xl font-bold text-viv53-gold">VIV53</span>
+            <span className="relative font-bold text-2xl md:text-3xl tracking-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+              <span className="bg-gradient-to-b from-viv53-gold to-viv53-gold-light bg-clip-text text-transparent">
+                v
+              </span>
+              <span className="relative">
+                <span className="bg-gradient-to-b from-viv53-gold to-viv53-gold-light bg-clip-text text-transparent">
+                  ı
+                </span>
+                {/* Dot above 'i' */}
+                <span className="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-gradient-to-b from-viv53-gold to-viv53-gold-light" />
+              </span>
+              <span className="bg-gradient-to-b from-viv53-gold to-viv53-gold-light bg-clip-text text-transparent">
+                v53
+              </span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

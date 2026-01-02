@@ -15,26 +15,21 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center bg-viv53-primary-bg overflow-hidden"
     >
-      {/* Animated mesh gradient background */}
+      {/* Video background */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Base gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-viv53-primary-bg via-viv53-primary-bg-secondary to-viv53-primary-bg" />
+        {/* Background video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
+        </video>
 
-        {/* Animated gradient orbs */}
-        <div className="absolute inset-0 opacity-20">
-          <div
-            className="absolute top-0 left-0 w-[500px] h-[500px] bg-viv53-gold rounded-full blur-3xl animate-[float_20s_ease-in-out_infinite]"
-            style={{ animationDelay: '0s' }}
-          />
-          <div
-            className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-viv53-gold-light rounded-full blur-3xl animate-[float_25s_ease-in-out_infinite]"
-            style={{ animationDelay: '5s' }}
-          />
-          <div
-            className="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-viv53-gold rounded-full blur-3xl animate-[float_22s_ease-in-out_infinite]"
-            style={{ animationDelay: '10s' }}
-          />
-        </div>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-viv53-primary-bg/70" />
 
         {/* Grid overlay for tech feel */}
         <div
