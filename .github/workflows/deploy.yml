@@ -45,6 +45,8 @@ jobs:
           VITE_ENABLE_SPANISH: ${{ vars.VITE_ENABLE_SPANISH }}
           VITE_APP_URL: ${{ vars.VITE_APP_URL }}
           VITE_APP_NAME: ${{ vars.VITE_APP_NAME }}
+          VITE_CAL_USERNAME: ${{ vars.VITE_CAL_USERNAME }}
+          VITE_MAILCHIMP_SUBSCRIBE_URL: ${{ vars.VITE_MAILCHIMP_SUBSCRIBE_URL }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

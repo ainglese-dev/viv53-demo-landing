@@ -4,10 +4,9 @@ import { Helmet } from 'react-helmet-async'
 import Hero from '@/components/sections/Hero'
 import Services from '@/components/sections/Services'
 import About from '@/components/sections/About'
-import ITAssessment from '@/components/sections/ITAssessment'
+import GetStarted from '@/components/sections/GetStarted'
 import Industries from '@/components/sections/Industries'
 import TechnologyPartners from '@/components/sections/TechnologyPartners'
-import Booking from '@/components/sections/Booking'
 import Contact from '@/components/sections/Contact'
 
 export default function Home() {
@@ -21,10 +20,9 @@ export default function Home() {
       <Hero />
       <Services />
       <About />
-      <ITAssessment />
+      <GetStarted />
       <Industries />
       <TechnologyPartners />
-      <Booking />
       <Contact />
     </>
   )
