@@ -61,3 +61,6 @@ playwright.config.ts
 *.spec.ts
 *.test.ts
 *.test.tsx
+*-test.html
+test-*.html
+direct-*.html

@@ -46,7 +46,8 @@ jobs:
           VITE_APP_URL: ${{ vars.VITE_APP_URL }}
           VITE_APP_NAME: ${{ vars.VITE_APP_NAME }}
           VITE_CAL_USERNAME: ${{ vars.VITE_CAL_USERNAME }}
-          VITE_MAILCHIMP_SUBSCRIBE_URL: ${{ vars.VITE_MAILCHIMP_SUBSCRIBE_URL }}
+          VITE_BREVO_API_KEY: ${{ secrets.VITE_BREVO_API_KEY }}
+          VITE_BREVO_LIST_ID: ${{ vars.VITE_BREVO_LIST_ID }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

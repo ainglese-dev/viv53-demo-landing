@@ -1,4 +1,5 @@
 import ReactGA from 'react-ga4'
+import { logger } from './logger'
 
 // Analytics IDs from environment variables (with placeholders)
 const GA4_MEASUREMENT_ID = import.meta.env.VITE_GA4_ID || 'G-XXXXXXXXXX'
@@ -15,7 +16,7 @@ export const isAnalyticsAllowed = (): boolean => {
 // Initialize Google Analytics 4
 export const initializeGA4 = (): void => {
   if (!isAnalyticsAllowed()) {
-    console.log('Analytics disabled: Cookie consent not accepted')
+    logger.log('Analytics disabled: Cookie consent not accepted')
     return
   }
 
@@ -25,9 +26,9 @@ export const initializeGA4 = (): void => {
         siteSpeedSampleRate: 100,
       },
     })
-    console.log('Google Analytics 4 initialized')
+    logger.log('Google Analytics 4 initialized')
   } catch (error) {
-    console.error('Failed to initialize GA4:', error)
+    logger.error('Failed to initialize GA4:', error)
   }
 }
 
@@ -112,7 +113,7 @@ export const trackPageView = (path: string): void => {
   try {
     ReactGA.send({ hitType: 'pageview', page: path })
   } catch (error) {
-    console.error('Failed to track page view:', error)
+    logger.error('Failed to track page view:', error)
   }
 }
 
@@ -135,7 +136,7 @@ export const trackEvent = (
       value,
     })
   } catch (error) {
-    console.error('Failed to track event:', error)
+    logger.error('Failed to track event:', error)
   }
 }
 

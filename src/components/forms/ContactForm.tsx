@@ -16,6 +16,7 @@ import {
 import SimpleCaptcha from './SimpleCaptcha'
 import { Loader2, Send } from 'lucide-react'
 import { trackFormSubmit } from '@/lib/analytics'
+import { logger } from '@/lib/logger'
 
 const services = [
   { value: 'cloud', label: 'Cloud Infrastructure' },
@@ -86,7 +87,7 @@ export default function ContactForm() {
         setSubmitStatus('error')
       }
     } catch (error) {
-      console.error('Form submission error:', error)
+      logger.error('Form submission error:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)

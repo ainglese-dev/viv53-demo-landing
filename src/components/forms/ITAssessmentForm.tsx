@@ -15,8 +15,9 @@ import {
 } from '@/components/ui/select'
 import SimpleCaptcha from './SimpleCaptcha'
 import { Loader2, Send, CheckCircle2 } from 'lucide-react'
-import { subscribeToMailchimp, parseMailchimpError } from '@/lib/mailchimp'
+import { subscribeToBrevo, parseBrevoError } from '@/lib/brevo'
 import { trackITAssessmentSubmit } from '@/lib/analytics'
+import { logger } from '@/lib/logger'
 
 const companySizes = [
   { value: '1-10', label: '1-10 employees' },
@@ -70,8 +71,8 @@ export default function ITAssessmentForm() {
     setErrorMessage('')
 
     try {
-      // Submit to Mailchimp
-      const response = await subscribeToMailchimp({
+      // Submit to Brevo
+      const response = await subscribeToBrevo({
         email: data.email,
         fullName: data.fullName,
         company: data.company,
@@ -89,11 +90,11 @@ export default function ITAssessmentForm() {
         setTimeout(() => setSubmitStatus('idle'), 8000)
       } else {
         setSubmitStatus('error')
-        setErrorMessage(parseMailchimpError(response.msg))
+        setErrorMessage(parseBrevoError(response.msg))
         setTimeout(() => setSubmitStatus('idle'), 8000)
       }
     } catch (error) {
-      console.error('IT Assessment submission error:', error)
+      logger.error('IT Assessment submission error:', error)
       setSubmitStatus('error')
       setErrorMessage('An unexpected error occurred. Please try again or contact us directly.')
       setTimeout(() => setSubmitStatus('idle'), 8000)

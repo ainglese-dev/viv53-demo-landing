@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { X } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { logger } from '@/lib/logger'
 
 const CONSENT_KEY = 'viv53-cookie-consent'
 
@@ -21,13 +22,13 @@ export default function CookieBanner() {
     localStorage.setItem(CONSENT_KEY, 'accepted')
     setVisible(false)
     // Initialize analytics here when Phase 6 is implemented
-    console.log('Cookie consent: accepted')
+    logger.log('Cookie consent: accepted')
   }
 
   const handleReject = () => {
     localStorage.setItem(CONSENT_KEY, 'rejected')
     setVisible(false)
-    console.log('Cookie consent: rejected')
+    logger.log('Cookie consent: rejected')
   }
 
   const handleClose = () => {
