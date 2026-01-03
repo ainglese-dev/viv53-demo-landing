@@ -23,3 +23,16 @@ export const bookingFormSchema = z.object({
 })
 
 export type BookingFormData = z.infer<typeof bookingFormSchema>
+
+export const itAssessmentFormSchema = z.object({
+  fullName: z.string().min(2, 'Name must be at least 2 characters'),
+  email: z.string().email('Invalid email address'),
+  company: z.string().min(2, 'Company name is required'),
+  companySize: z.string().min(1, 'Please select your company size'),
+  currentSetup: z.string().min(1, 'Please select your current IT setup'),
+  painPoint: z.string().min(20, 'Please describe your challenge (minimum 20 characters)'),
+  phone: z.string().optional(),
+  captcha: z.string().min(1, 'Please complete the CAPTCHA'),
+})
+
+export type ITAssessmentFormData = z.infer<typeof itAssessmentFormSchema>

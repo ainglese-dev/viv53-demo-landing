@@ -20,6 +20,7 @@
   "author": "Angel Inglese",
   "license": "MIT",
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-dialog": "^1.0.5",

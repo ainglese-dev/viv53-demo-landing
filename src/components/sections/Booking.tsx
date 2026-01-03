@@ -1,5 +1,8 @@
-import BookingForm from '@/components/forms/BookingForm'
+import CalendlyEmbed from '@/components/integrations/CalendlyEmbed'
 import { Calendar } from 'lucide-react'
+
+const contactPhone = import.meta.env.VITE_CONTACT_PHONE || '+17862524033'
+const contactPhoneDisplay = import.meta.env.VITE_CONTACT_PHONE_DISPLAY || '+1 (786) 252-4033'
 
 export default function Booking() {
   return (
@@ -18,17 +21,17 @@ export default function Booking() {
           </p>
         </div>
 
-        {/* Booking Form */}
-        <div className="max-w-2xl mx-auto bg-viv53-primary-bg border border-viv53-border rounded-lg p-8">
-          <BookingForm />
+        {/* Calendly Widget */}
+        <div className="max-w-4xl mx-auto bg-viv53-primary-bg border border-viv53-border rounded-lg p-4 md:p-8">
+          <CalendlyEmbed />
         </div>
 
         {/* Info */}
         <div className="mt-8 text-center">
           <p className="text-sm text-viv53-text-muted">
-            We'll confirm your appointment within 24 hours. Prefer to talk now?{' '}
-            <a href="tel:+1-234-567-8900" className="text-viv53-gold hover:text-viv53-gold-hover underline">
-              Call us at +1-234-567-8900
+            Select a time that works for you. Prefer to talk now?{' '}
+            <a href={`tel:${contactPhone}`} className="text-viv53-gold hover:text-viv53-gold-hover underline">
+              Call us at {contactPhoneDisplay}
             </a>
           </p>
         </div>

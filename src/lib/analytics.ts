@@ -159,3 +159,23 @@ export const trackCTAClick = (ctaName: string): void => {
 export const trackWhatsAppClick = (): void => {
   trackEvent('Contact', 'WhatsApp Click', 'Floating Button')
 }
+
+// Calendly event tracking
+export const trackCalendlyEvent = (eventName: string, details?: string): void => {
+  trackEvent('Calendly', eventName, details)
+}
+
+export const trackCalendlyScheduled = (eventType?: string): void => {
+  trackEvent('Calendly', 'Event Scheduled', eventType)
+  // This is a conversion event - can be used for goal tracking
+  trackFormSubmit('Calendly Booking')
+}
+
+// IT Assessment form tracking
+export const trackITAssessmentSubmit = (): void => {
+  trackFormSubmit('IT Assessment Form')
+}
+
+export const trackITAssessmentView = (): void => {
+  trackEvent('Form', 'View', 'IT Assessment Form')
+}
