@@ -9,10 +9,13 @@ interface CaseStudyCardProps {
 export default function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   return (
     <Card className="border-2 border-viv53-gold bg-viv53-primary-bg-secondary p-8">
-      {/* Industry Badge */}
-      <div className="mb-6">
+      {/* Industry + Service Category Badges */}
+      <div className="mb-6 flex flex-wrap gap-2">
         <span className="inline-block px-4 py-1 bg-viv53-gold/10 border border-viv53-gold rounded-full text-sm text-viv53-gold font-medium">
           {caseStudy.industry}
+        </span>
+        <span className="inline-block px-3 py-1 bg-viv53-primary-bg border border-viv53-border rounded-full text-xs text-viv53-text-secondary font-medium">
+          {caseStudy.serviceCategory}
         </span>
       </div>
 
@@ -28,7 +31,7 @@ export default function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
       {/* Results Metrics */}
       <div className="mb-6">
         <h4 className="text-lg font-semibold text-viv53-text-primary mb-4">Results</h4>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {caseStudy.results.map((result, index) => (
             <div key={index} className="text-center">
               <div className="text-3xl font-bold text-viv53-gold mb-1">{result.value}</div>

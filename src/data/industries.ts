@@ -17,7 +17,7 @@ export const industries: Industry[] = [
     icon: Heart,
     tagline: 'Zero-downtime patient care',
     painPoint: 'Every minute of network downtime risks patient safety and HIPAA compliance',
-    viv53Solution: 'Redundant infrastructure, AI-powered monitoring, and automated failover ensuring 24/7 uptime for critical healthcare systems',
+    viv53Solution: 'HIPAA/HITECH compliance automation, medical device network segmentation, and AI-powered audit trail with access control for patient data protection',
     isHighlighted: true,
   },
   {
@@ -26,7 +26,7 @@ export const industries: Industry[] = [
     icon: Landmark,
     tagline: 'Secure transactions, always',
     painPoint: 'Downtime equals revenue loss and eroded customer trust in financial systems',
-    viv53Solution: 'Multi-layered security, automated threat detection, and zero-trust architecture protecting transactions and data',
+    viv53Solution: 'PCI-DSS, FFIEC, and SOX continuous compliance reporting, automated network segmentation validation, and evidence collection for regulatory audits',
     isHighlighted: true,
   },
   {
@@ -44,7 +44,7 @@ export const industries: Industry[] = [
     icon: Factory,
     tagline: 'Production never stops',
     painPoint: 'Production line downtime cascades into massive operational losses',
-    viv53Solution: 'Industrial IoT integration, predictive maintenance automation, and resilient network architecture',
+    viv53Solution: 'IEC 62443 / NIST CSF compliance automation, OT-IT network isolation, and change control traceability for production environment compliance',
   },
   {
     id: 'professional-services',
